@@ -30,9 +30,11 @@
   .logo { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.6rem; letter-spacing:-0.01em; color:var(--cream); display:flex; align-items:center; gap:10px; }
   .logo .mark { width:30px; height:30px; border-radius:50%; border:1.5px solid var(--brass); display:flex; align-items:center; justify-content:center; }
   .logo .mark::after { content:''; width:11px; height:11px; border-radius:50%; background:radial-gradient(circle at 35% 30%, var(--brass-bright), var(--brass) 70%); }
-  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; }
+  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; align-items:center; }
   .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; font-weight:400; transition:color .2s; }
   .nav-links a:hover { color:var(--brass-bright); }
+  .lang-btn { background:none; border:1px solid var(--brass); color:var(--brass); font-family:'Bricolage Grotesque',sans-serif; font-size:0.82rem; font-weight:600; padding:5px 13px; border-radius:4px; cursor:pointer; transition:all .2s; line-height:1; }
+  .lang-btn:hover { background:var(--brass); color:var(--bg); }
   @media(max-width:720px){ .nav-links{ display:none; } }
 
   /* Hero */
@@ -51,12 +53,9 @@
   .btn-ghost { color:var(--cream); border:1px solid var(--line); }
   .btn-ghost:hover { border-color:var(--brass); color:var(--brass-bright); }
   .hero-img { position:relative; overflow:hidden; }
-  .hero-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.92) saturate(1.05); }
+  .hero-img video { width:100%; height:100%; object-fit:cover; filter:brightness(0.92) saturate(1.05); }
   .hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, var(--bg) 0%, transparent 22%); }
   @media(max-width:860px){ .hero-img{ min-height:300px; border-radius:8px; } .hero-img::after{ background:linear-gradient(0deg, var(--bg) 0%, transparent 30%); } }
-
-  /* credit line */
-  .photo-credit { font-family:'Bricolage Grotesque',sans-serif; font-size:0.68rem; color:var(--muted); opacity:0.55; position:absolute; bottom:8px; right:10px; z-index:2; }
 
   /* Trust */
   .trust { border-bottom:1px solid var(--line); }
@@ -125,10 +124,10 @@
   <div class="wrap inner">
     <div class="logo">Welcome to Espresso</div>
     <ul class="nav-links">
-      <li><a href="#start">Start Here</a></li>
-      <li><a href="#guides">Buying Guides</a></li>
-      <li><a href="#learn">Learn</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#start" data-i18n="nav-start">Start Here</a></li>
+      <li><a href="#guides" data-i18n="nav-guides">Buying Guides</a></li>
+      <li><a href="#learn" data-i18n="nav-learn">Learn</a></li>
+      <li><button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()">Español</button></li>
     </ul>
   </div>
 </nav>
@@ -136,12 +135,12 @@
 <header class="wrap">
   <div class="hero">
     <div class="hero-text">
-      <div class="eyebrow">Home Espresso · For Beginners</div>
-      <h1>Great espresso,<br>made <span class="accent">at home.</span></h1>
-      <p>Honest, tested gear guides and plain-English how-tos for anyone setting up their first home espresso bar. No jargon, no snobbery — just what works.</p>
+      <div class="eyebrow" data-i18n="hero-eyebrow">Home Espresso · For Beginners</div>
+      <h1 data-i18n="hero-h1">Great espresso,<br>made <span class="accent">at home.</span></h1>
+      <p data-i18n="hero-p">Honest, tested gear guides and plain-English how-tos for anyone setting up their first home espresso bar. No jargon, no snobbery — just what works.</p>
       <div class="cta-row">
-        <a href="#start" class="btn btn-primary">Start with the basics</a>
-        <a href="#guides" class="btn btn-ghost">Browse gear guides</a>
+        <a href="#start" class="btn btn-primary" data-i18n="hero-btn-primary">Start with the basics</a>
+        <a href="#guides" class="btn btn-ghost" data-i18n="hero-btn-ghost">Browse gear guides</a>
       </div>
     </div>
     <div class="hero-img">
@@ -152,9 +151,9 @@
 
 <div class="trust">
   <div class="wrap inner">
-    <span><b>Independently tested</b> — we buy our own gear</span>
-    <span><b>No sponsored rankings</b></span>
-    <span><b>Beginner-first</b>, always</span>
+    <span data-i18n="trust-1"><b>Independently tested</b> — we buy our own gear</span>
+    <span data-i18n="trust-2"><b>No sponsored rankings</b></span>
+    <span data-i18n="trust-3"><b>Beginner-first</b>, always</span>
   </div>
 </div>
 
@@ -162,69 +161,68 @@
   <div class="featured">
     <div class="featured-img">
       <img src="images/espresso-crema.jpg" alt="Close-up of an espresso shot with crema">
-      <span class="photo-credit">Photo: Mike Jones / Pexels</span>
     </div>
     <div class="featured-body">
-      <div class="kicker">Read this first</div>
-      <h3>The Complete Beginner's Guide to Home Espresso</h3>
-      <p>Everything you need before spending a dollar: how espresso actually works, which gear matters (and which doesn't), and a realistic budget for café-quality shots at home.</p>
-      <a href="beginners-guide.html" class="btn btn-primary" style="align-self:flex-start;">Read the guide →</a>
+      <div class="kicker" data-i18n="featured-kicker">Read this first</div>
+      <h3 data-i18n="featured-h3">The Complete Beginner's Guide to Home Espresso</h3>
+      <p data-i18n="featured-p">Everything you need before spending a dollar: how espresso actually works, which gear matters (and which doesn't), and a realistic budget for café-quality shots at home.</p>
+      <a href="beginners-guide.html" class="btn btn-primary" style="align-self:flex-start;" data-i18n="featured-btn">Read the guide →</a>
     </div>
   </div>
 </section>
 
 <section class="sec wrap" id="guides" style="padding-top:0;">
   <div class="sec-head">
-    <h2>Gear we've actually used</h2>
-    <a href="#" class="link">All buying guides →</a>
+    <h2 data-i18n="guides-h2">Gear we've actually used</h2>
+    <a href="#" class="link" data-i18n="guides-link">All buying guides →</a>
   </div>
   <div class="grid3">
     <a href="best-espresso-machines.html" class="gcard" style="text-decoration:none;">
       <div class="gcard-img"><img src="images/machine-bambino.jpg" alt="Breville Bambino Plus espresso machine"></div>
       <div class="gcard-body">
-        <span class="tag">Machines</span>
-        <h4>Best Beginner Espresso Machines</h4>
-        <p>Four machines that are forgiving to learn on without wasting money — tested at every budget.</p>
+        <span class="tag" data-i18n="card1-tag">Machines</span>
+        <h4 data-i18n="card1-h4">Best Beginner Espresso Machines</h4>
+        <p data-i18n="card1-p">Four machines that are forgiving to learn on without wasting money — tested at every budget.</p>
       </div>
     </a>
     <a href="best-grinders.html" class="gcard" style="text-decoration:none;">
       <div class="gcard-img"><img src="images/grinder-baratza.jpg" alt="Baratza Encore ESP espresso grinder"></div>
       <div class="gcard-body">
-        <span class="tag">Grinders</span>
-        <h4>Best Espresso Grinder for Beginners</h4>
-        <p>The grinder matters more than the machine. Here's where to spend and where to save.</p>
+        <span class="tag" data-i18n="card2-tag">Grinders</span>
+        <h4 data-i18n="card2-h4">Best Espresso Grinder for Beginners</h4>
+        <p data-i18n="card2-p">The grinder matters more than the machine. Here's where to spend and where to save.</p>
       </div>
     </a>
     <a href="best-espresso-beans.html" class="gcard" style="text-decoration:none;">
       <div class="gcard-img"><img src="images/beans-lavazza.jpg" alt="Bag of Lavazza Super Crema espresso beans"></div>
       <div class="gcard-body">
-        <span class="tag">Beans</span>
-        <h4>Best Espresso Beans for Beginners</h4>
-        <p>The bean matters more than most beginners realize. Four fresh-roasted picks at every budget.</p>
+        <span class="tag" data-i18n="card3-tag">Beans</span>
+        <h4 data-i18n="card3-h4">Best Espresso Beans for Beginners</h4>
+        <p data-i18n="card3-p">The bean matters more than most beginners realize. Four fresh-roasted picks at every budget.</p>
       </div>
     </a>
     <a href="best-espresso-tampers.html" class="gcard" style="text-decoration:none;">
       <div class="gcard-img"><img src="images/tamper-normcore-amz-0.jpg" alt="Normcore V4 spring-loaded espresso tamper"></div>
       <div class="gcard-body">
-        <span class="tag">Accessories</span>
-        <h4>Best Espresso Tampers</h4>
-        <p>Consistent tamping is what separates repeatable shots from guesswork. Spring-loaded picks for every budget.</p>
+        <span class="tag" data-i18n="card4-tag">Accessories</span>
+        <h4 data-i18n="card4-h4">Best Espresso Tampers</h4>
+        <p data-i18n="card4-p">Consistent tamping is what separates repeatable shots from guesswork. Spring-loaded picks for every budget.</p>
       </div>
     </a>
     <a href="best-espresso-scales.html" class="gcard" style="text-decoration:none;">
       <div class="gcard-img"><img src="images/scale-timemore.jpg" alt="Timemore Black Mirror espresso scale"></div>
       <div class="gcard-body">
-        <span class="tag">Accessories</span>
-        <h4>Best Espresso Scales</h4>
-        <p>A scale turns espresso into a repeatable process. Three picks with fast response and built-in timers.</p>
+        <span class="tag" data-i18n="card5-tag">Accessories</span>
+        <h4 data-i18n="card5-h4">Best Espresso Scales</h4>
+        <p data-i18n="card5-p">A scale turns espresso into a repeatable process. Three picks with fast response and built-in timers.</p>
       </div>
     </a>
     <a href="best-milk-pitchers.html" class="gcard" style="text-decoration:none;">
       <div class="gcard-img"><img src="images/pitcher-rattleware-20.jpg" alt="Rattleware 20oz milk frothing pitcher" style="object-fit:contain;background:#221B15;"></div>
       <div class="gcard-body">
-        <span class="tag">Accessories</span>
-        <h4>Best Milk Frothing Pitchers</h4>
-        <p>The right pitcher makes latte art achievable. Size guide and top picks for home setups.</p>
+        <span class="tag" data-i18n="card6-tag">Accessories</span>
+        <h4 data-i18n="card6-h4">Best Milk Frothing Pitchers</h4>
+        <p data-i18n="card6-p">The right pitcher makes latte art achievable. Size guide and top picks for home setups.</p>
       </div>
     </a>
   </div>
@@ -236,14 +234,14 @@
       <img src="images/coffee-guy.png" alt="Person enjoying a coffee at a café">
     </div>
     <div>
-      <div class="sec-head" style="margin-bottom:18px;"><h2>From first shot to dialed in</h2></div>
+      <div class="sec-head" style="margin-bottom:18px;"><h2 data-i18n="learn-h2">From first shot to dialed in</h2></div>
       <ul class="learn-list">
-        <li><a href="first-espresso-shot.html"><span class="n">01</span><span class="t">How to Pull Your First Espresso Shot</span></a></li>
-        <li><a href="dial-in-espresso.html"><span class="n">02</span><span class="t">How to Dial In Espresso: Grind, Dose & Yield</span></a></li>
-        <li><a href="separate-grinder.html"><span class="n">03</span><span class="t">Do You Really Need a Separate Grinder?</span></a></li>
-        <li><a href="portafilter-types.html"><span class="n">04</span><span class="t">Pressurized vs Non-Pressurized Portafilters</span></a></li>
-        <li><a href="beginner-mistakes.html"><span class="n">05</span><span class="t">9 Common Beginner Espresso Mistakes</span></a></li>
-        <li><a href="milk-frothing.html"><span class="n">06</span><span class="t">Milk Frothing for Beginners</span></a></li>
+        <li><a href="first-espresso-shot.html"><span class="n">01</span><span class="t" data-i18n="learn-1">How to Pull Your First Espresso Shot</span></a></li>
+        <li><a href="dial-in-espresso.html"><span class="n">02</span><span class="t" data-i18n="learn-2">How to Dial In Espresso: Grind, Dose &amp; Yield</span></a></li>
+        <li><a href="separate-grinder.html"><span class="n">03</span><span class="t" data-i18n="learn-3">Do You Really Need a Separate Grinder?</span></a></li>
+        <li><a href="portafilter-types.html"><span class="n">04</span><span class="t" data-i18n="learn-4">Pressurized vs Non-Pressurized Portafilters</span></a></li>
+        <li><a href="beginner-mistakes.html"><span class="n">05</span><span class="t" data-i18n="learn-5">9 Common Beginner Espresso Mistakes</span></a></li>
+        <li><a href="milk-frothing.html"><span class="n">06</span><span class="t" data-i18n="learn-6">Milk Frothing for Beginners</span></a></li>
       </ul>
     </div>
   </div>
@@ -254,18 +252,143 @@
     <div class="top">
       <div>
         <div class="logo">Welcome to Espresso</div>
-        <p class="blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
+        <p class="blurb" data-i18n="footer-blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
       </div>
       <div class="foot-links">
-        <a href="#">About</a>
-        <a href="#">Contact</a>
-        <a href="#">Affiliate Disclosure</a>
-        <a href="#">Privacy</a>
+        <a href="#" data-i18n="footer-about">About</a>
+        <a href="#" data-i18n="footer-contact">Contact</a>
+        <a href="#" data-i18n="footer-affiliate">Affiliate Disclosure</a>
+        <a href="#" data-i18n="footer-privacy">Privacy</a>
       </div>
     </div>
-    <p class="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves. Photos via Unsplash and Pexels, free for commercial use.</p>
+    <p class="disclosure" data-i18n="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves. Photos via Unsplash and Pexels, free for commercial use.</p>
   </div>
 </footer>
+
+<script>
+const i18n = {
+  en: {
+    'nav-start': 'Start Here',
+    'nav-guides': 'Buying Guides',
+    'nav-learn': 'Learn',
+    'hero-eyebrow': 'Home Espresso · For Beginners',
+    'hero-h1': 'Great espresso,<br>made <span class="accent">at home.</span>',
+    'hero-p': 'Honest, tested gear guides and plain-English how-tos for anyone setting up their first home espresso bar. No jargon, no snobbery — just what works.',
+    'hero-btn-primary': 'Start with the basics',
+    'hero-btn-ghost': 'Browse gear guides',
+    'trust-1': '<b>Independently tested</b> — we buy our own gear',
+    'trust-2': '<b>No sponsored rankings</b>',
+    'trust-3': '<b>Beginner-first</b>, always',
+    'featured-kicker': 'Read this first',
+    'featured-h3': "The Complete Beginner's Guide to Home Espresso",
+    'featured-p': "Everything you need before spending a dollar: how espresso actually works, which gear matters (and which doesn't), and a realistic budget for café-quality shots at home.",
+    'featured-btn': 'Read the guide →',
+    'guides-h2': "Gear we've actually used",
+    'guides-link': 'All buying guides →',
+    'card1-tag': 'Machines',
+    'card1-h4': 'Best Beginner Espresso Machines',
+    'card1-p': 'Four machines that are forgiving to learn on without wasting money — tested at every budget.',
+    'card2-tag': 'Grinders',
+    'card2-h4': 'Best Espresso Grinder for Beginners',
+    'card2-p': "The grinder matters more than the machine. Here's where to spend and where to save.",
+    'card3-tag': 'Beans',
+    'card3-h4': 'Best Espresso Beans for Beginners',
+    'card3-p': 'The bean matters more than most beginners realize. Four fresh-roasted picks at every budget.',
+    'card4-tag': 'Accessories',
+    'card4-h4': 'Best Espresso Tampers',
+    'card4-p': 'Consistent tamping is what separates repeatable shots from guesswork. Spring-loaded picks for every budget.',
+    'card5-tag': 'Accessories',
+    'card5-h4': 'Best Espresso Scales',
+    'card5-p': 'A scale turns espresso into a repeatable process. Three picks with fast response and built-in timers.',
+    'card6-tag': 'Accessories',
+    'card6-h4': 'Best Milk Frothing Pitchers',
+    'card6-p': 'The right pitcher makes latte art achievable. Size guide and top picks for home setups.',
+    'learn-h2': 'From first shot to dialed in',
+    'learn-1': 'How to Pull Your First Espresso Shot',
+    'learn-2': 'How to Dial In Espresso: Grind, Dose &amp; Yield',
+    'learn-3': 'Do You Really Need a Separate Grinder?',
+    'learn-4': 'Pressurized vs Non-Pressurized Portafilters',
+    'learn-5': '9 Common Beginner Espresso Mistakes',
+    'learn-6': 'Milk Frothing for Beginners',
+    'footer-blurb': "Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.",
+    'footer-about': 'About',
+    'footer-contact': 'Contact',
+    'footer-affiliate': 'Affiliate Disclosure',
+    'footer-privacy': 'Privacy',
+    'disclosure': "Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves. Photos via Unsplash and Pexels, free for commercial use."
+  },
+  es: {
+    'nav-start': 'Comenzar',
+    'nav-guides': 'Guías de Compra',
+    'nav-learn': 'Aprende',
+    'hero-eyebrow': 'Espresso en Casa · Para Principiantes',
+    'hero-h1': 'Excelente espresso,<br>hecho <span class="accent">en casa.</span>',
+    'hero-p': 'Guías de equipo honestas y tutoriales en español sencillo para quien quiera montar su primera barra de espresso en casa. Sin tecnicismos, sin esnobismo — solo lo que funciona.',
+    'hero-btn-primary': 'Empieza con lo básico',
+    'hero-btn-ghost': 'Ver guías de equipo',
+    'trust-1': '<b>Probado de forma independiente</b> — compramos nuestro propio equipo',
+    'trust-2': '<b>Sin clasificaciones patrocinadas</b>',
+    'trust-3': '<b>Principiantes primero</b>, siempre',
+    'featured-kicker': 'Lee esto primero',
+    'featured-h3': 'La Guía Completa para Principiantes de Espresso en Casa',
+    'featured-p': 'Todo lo que necesitas antes de gastar un dólar: cómo funciona el espresso, qué equipo importa (y cuál no), y un presupuesto realista para shots de calidad de café en casa.',
+    'featured-btn': 'Leer la guía →',
+    'guides-h2': 'Equipo que realmente hemos usado',
+    'guides-link': 'Todas las guías de compra →',
+    'card1-tag': 'Máquinas',
+    'card1-h4': 'Mejores Máquinas de Espresso para Principiantes',
+    'card1-p': 'Cuatro máquinas fáciles de aprender sin malgastar dinero — probadas en todos los presupuestos.',
+    'card2-tag': 'Molinillos',
+    'card2-h4': 'Mejor Molinillo de Espresso para Principiantes',
+    'card2-p': 'El molinillo importa más que la máquina. Te decimos dónde gastar y dónde ahorrar.',
+    'card3-tag': 'Granos',
+    'card3-h4': 'Mejores Granos de Espresso para Principiantes',
+    'card3-p': 'El grano importa más de lo que la mayoría de principiantes cree. Cuatro opciones recién tostadas para cada presupuesto.',
+    'card4-tag': 'Accesorios',
+    'card4-h4': 'Mejores Prensadores de Espresso',
+    'card4-p': 'Un prensado consistente separa los shots repetibles de las conjeturas. Opciones con resorte para cada presupuesto.',
+    'card5-tag': 'Accesorios',
+    'card5-h4': 'Mejores Básculas de Espresso',
+    'card5-p': 'Una báscula convierte el espresso en un proceso repetible. Tres opciones con respuesta rápida y temporizadores integrados.',
+    'card6-tag': 'Accesorios',
+    'card6-h4': 'Mejores Jarras para Espumar Leche',
+    'card6-p': 'La jarra correcta hace que el arte latte sea alcanzable. Guía de tamaños y mejores opciones para uso en casa.',
+    'learn-h2': 'Del primer shot al ajuste perfecto',
+    'learn-1': 'Cómo Hacer Tu Primer Shot de Espresso',
+    'learn-2': 'Cómo Ajustar el Espresso: Molienda, Dosis y Rendimiento',
+    'learn-3': '¿Realmente Necesitas un Molinillo Separado?',
+    'learn-4': 'Portafiltros Presurizados vs No Presurizados',
+    'learn-5': '9 Errores Comunes de Principiantes en Espresso',
+    'learn-6': 'Espumar Leche para Principiantes',
+    'footer-blurb': 'Ayudamos a los principiantes a construir una configuración de espresso en casa que realmente amarán — una guía honesta a la vez.',
+    'footer-about': 'Acerca de',
+    'footer-contact': 'Contacto',
+    'footer-affiliate': 'Divulgación de Afiliados',
+    'footer-privacy': 'Privacidad',
+    'disclosure': 'Divulgación de afiliados: Welcome to Espresso es compatible con los lectores. Cuando compras a través de los enlaces de nuestro sitio, podemos ganar una comisión de afiliado sin costo adicional para ti. Solo recomendamos equipos que usaríamos nosotros mismos. Fotos de Unsplash y Pexels, de uso comercial gratuito.'
+  }
+};
+
+function applyLanguage(lang) {
+  document.querySelectorAll('[data-i18n]').forEach(function(el) {
+    var key = el.getAttribute('data-i18n');
+    if (i18n[lang] && i18n[lang][key] !== undefined) {
+      el.innerHTML = i18n[lang][key];
+    }
+  });
+  document.getElementById('lang-toggle').textContent = lang === 'en' ? 'Español' : 'English';
+  document.documentElement.lang = lang;
+  localStorage.setItem('wte-lang', lang);
+}
+
+function toggleLanguage() {
+  var current = localStorage.getItem('wte-lang') || 'en';
+  applyLanguage(current === 'en' ? 'es' : 'en');
+}
+
+// Apply stored language on load
+applyLanguage(localStorage.getItem('wte-lang') || 'en');
+</script>
 
 </body>
 </html>
