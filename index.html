@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Welcome to Espresso — Home Espresso for Beginners</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14100D;
+    --bg-soft: #1E1813;
+    --card: #221B15;
+    --brass: #C79A5B;
+    --brass-bright: #E3BC7E;
+    --cream: #F2E9DC;
+    --muted: #A89684;
+    --line: #352B22;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Newsreader', serif; background:var(--bg); color:var(--cream); line-height:1.65; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 28px; }
+  img { display:block; max-width:100%; }
+
+  /* Nav */
+  nav { position:sticky; top:0; z-index:50; background:rgba(20,16,13,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .inner { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.2rem; letter-spacing:-0.01em; color:var(--cream); display:flex; align-items:center; gap:10px; }
+  .logo .mark { width:30px; height:30px; border-radius:50%; border:1.5px solid var(--brass); display:flex; align-items:center; justify-content:center; }
+  .logo .mark::after { content:''; width:11px; height:11px; border-radius:50%; background:radial-gradient(circle at 35% 30%, var(--brass-bright), var(--brass) 70%); }
+  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; font-weight:400; transition:color .2s; }
+  .nav-links a:hover { color:var(--brass-bright); }
+  @media(max-width:720px){ .nav-links{ display:none; } }
+
+  /* Hero */
+  .hero { display:grid; grid-template-columns:1fr 1fr; gap:0; min-height:560px; align-items:stretch; border-bottom:1px solid var(--line); }
+  @media(max-width:860px){ .hero{ grid-template-columns:1fr; } }
+  .hero-text { padding:84px 56px 84px 0; display:flex; flex-direction:column; justify-content:center; }
+  @media(max-width:860px){ .hero-text{ padding:56px 0 40px; } }
+  .eyebrow { font-family:'Bricolage Grotesque',sans-serif; font-size:0.74rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass); margin-bottom:24px; }
+  .hero h1 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(2.7rem,5.5vw,4.3rem); line-height:1.0; letter-spacing:-0.03em; color:var(--cream); margin-bottom:26px; }
+  .hero h1 .accent { color:var(--brass); font-family:'Newsreader',serif; font-style:italic; font-weight:400; }
+  .hero p { font-size:1.18rem; color:var(--muted); max-width:42ch; margin-bottom:34px; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; }
+  .btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.92rem; padding:15px 30px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; }
+  .btn-primary { background:var(--brass); color:var(--bg); }
+  .btn-primary:hover { background:var(--brass-bright); transform:translateY(-2px); }
+  .btn-ghost { color:var(--cream); border:1px solid var(--line); }
+  .btn-ghost:hover { border-color:var(--brass); color:var(--brass-bright); }
+  .hero-img { position:relative; overflow:hidden; }
+  .hero-img img { width:100%; height:100%; object-fit:cover; filter:brightness(0.92) saturate(1.05); }
+  .hero-img::after { content:''; position:absolute; inset:0; background:linear-gradient(90deg, var(--bg) 0%, transparent 22%); }
+  @media(max-width:860px){ .hero-img{ min-height:300px; border-radius:8px; } .hero-img::after{ background:linear-gradient(0deg, var(--bg) 0%, transparent 30%); } }
+
+  /* credit line */
+  .photo-credit { font-family:'Bricolage Grotesque',sans-serif; font-size:0.68rem; color:var(--muted); opacity:0.55; position:absolute; bottom:8px; right:10px; z-index:2; }
+
+  /* Trust */
+  .trust { border-bottom:1px solid var(--line); }
+  .trust .inner { display:flex; gap:48px; justify-content:center; flex-wrap:wrap; padding:18px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:0.82rem; color:var(--muted); }
+  .trust b { color:var(--cream); font-weight:600; }
+
+  /* Sections */
+  .sec { padding:88px 0; }
+  .sec-head { display:flex; align-items:flex-end; justify-content:space-between; margin-bottom:44px; gap:20px; flex-wrap:wrap; }
+  .sec-head h2 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(1.9rem,3.5vw,2.7rem); letter-spacing:-0.02em; color:var(--cream); }
+  .sec-head .link { font-family:'Bricolage Grotesque',sans-serif; font-size:0.88rem; color:var(--brass); text-decoration:none; }
+  .sec-head .link:hover { color:var(--brass-bright); }
+
+  /* Start here - featured */
+  .featured { display:grid; grid-template-columns:1.1fr 0.9fr; background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; overflow:hidden; }
+  @media(max-width:760px){ .featured{ grid-template-columns:1fr; } }
+  .featured-img { position:relative; min-height:340px; }
+  .featured-img img { width:100%; height:100%; object-fit:cover; }
+  .featured-body { padding:48px; display:flex; flex-direction:column; justify-content:center; }
+  .featured .kicker { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:16px; }
+  .featured h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.85rem; line-height:1.1; letter-spacing:-0.02em; margin-bottom:16px; color:var(--cream); }
+  .featured p { color:var(--muted); margin-bottom:26px; }
+
+  /* Guides */
+  .grid3 { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+  @media(max-width:860px){ .grid3{ grid-template-columns:1fr; } }
+  .gcard { background:var(--card); border:1px solid var(--line); border-radius:10px; overflow:hidden; transition:transform .2s, border-color .2s; cursor:pointer; }
+  .gcard:hover { transform:translateY(-5px); border-color:var(--brass); }
+  .gcard-img { aspect-ratio:3/2; overflow:hidden; }
+  .gcard-img img { width:100%; height:100%; object-fit:cover; transition:transform .4s; }
+  .gcard:hover .gcard-img img { transform:scale(1.05); }
+  .gcard-body { padding:26px; }
+  .gcard .tag { font-family:'Bricolage Grotesque',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--brass); }
+  .gcard h4 { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:1.28rem; letter-spacing:-0.01em; margin:12px 0 10px; color:var(--cream); }
+  .gcard p { font-size:1rem; color:var(--muted); }
+
+  /* Learn split */
+  .learn { display:grid; grid-template-columns:0.85fr 1.15fr; gap:56px; align-items:center; }
+  @media(max-width:860px){ .learn{ grid-template-columns:1fr; gap:32px; } }
+  .learn-img { border-radius:10px; overflow:hidden; aspect-ratio:4/5; }
+  .learn-img img { width:100%; height:100%; object-fit:cover; }
+  @media(max-width:860px){ .learn-img{ aspect-ratio:16/9; } }
+  .learn-list { list-style:none; }
+  .learn-list li { border-top:1px solid var(--line); }
+  .learn-list li:last-child { border-bottom:1px solid var(--line); }
+  .learn-list a { display:flex; align-items:baseline; gap:18px; padding:20px 4px; text-decoration:none; transition:padding .2s; }
+  .learn-list a:hover { padding-left:14px; }
+  .learn-list .n { font-family:'Bricolage Grotesque',sans-serif; font-size:0.85rem; color:var(--brass); min-width:28px; }
+  .learn-list .t { font-family:'Bricolage Grotesque',sans-serif; font-size:1.1rem; color:var(--cream); font-weight:400; }
+  .learn-list a:hover .t { color:var(--brass-bright); }
+
+  /* Footer */
+  footer { background:var(--bg-soft); border-top:1px solid var(--line); padding:56px 0 36px; }
+  footer .top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:28px; margin-bottom:36px; }
+  footer .logo { margin-bottom:14px; }
+  footer .blurb { color:var(--muted); max-width:34ch; font-size:1rem; }
+  .foot-links { display:flex; gap:30px; flex-wrap:wrap; font-family:'Bricolage Grotesque',sans-serif; }
+  .foot-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+  .foot-links a:hover { color:var(--brass-bright); }
+  .disclosure { font-family:'Bricolage Grotesque',sans-serif; font-size:0.78rem; color:var(--muted); opacity:0.7; border-top:1px solid var(--line); padding-top:24px; max-width:70ch; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap inner">
+    <div class="logo"><span class="mark"></span> Welcome to Espresso</div>
+    <ul class="nav-links">
+      <li><a href="#start">Start Here</a></li>
+      <li><a href="#guides">Buying Guides</a></li>
+      <li><a href="#learn">Learn</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap">
+  <div class="hero">
+    <div class="hero-text">
+      <div class="eyebrow">Home Espresso · For Beginners</div>
+      <h1>Great espresso,<br>made <span class="accent">at home.</span></h1>
+      <p>Honest, tested gear guides and plain-English how-tos for anyone setting up their first home espresso bar. No jargon, no snobbery — just what works.</p>
+      <div class="cta-row">
+        <a href="#start" class="btn btn-primary">Start with the basics</a>
+        <a href="#guides" class="btn btn-ghost">Browse gear guides</a>
+      </div>
+    </div>
+    <div class="hero-img">
+      <img src="images/hero-counter.jpg" alt="Home espresso machine and coffee supplies on a kitchen counter">
+      <span class="photo-credit">Photo: Dev Benjamin / Unsplash</span>
+    </div>
+  </div>
+</header>
+
+<div class="trust">
+  <div class="wrap inner">
+    <span><b>Independently tested</b> — we buy our own gear</span>
+    <span><b>No sponsored rankings</b></span>
+    <span><b>Beginner-first</b>, always</span>
+  </div>
+</div>
+
+<section class="sec wrap" id="start">
+  <div class="featured">
+    <div class="featured-img">
+      <img src="images/espresso-crema.jpg" alt="Close-up of an espresso shot with crema">
+      <span class="photo-credit">Photo: Mike Jones / Pexels</span>
+    </div>
+    <div class="featured-body">
+      <div class="kicker">Read this first</div>
+      <h3>The Complete Beginner's Guide to Home Espresso</h3>
+      <p>Everything you need before spending a dollar: how espresso actually works, which gear matters (and which doesn't), and a realistic budget for café-quality shots at home.</p>
+      <a href="#" class="btn btn-primary" style="align-self:flex-start;">Read the guide →</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="guides" style="padding-top:0;">
+  <div class="sec-head">
+    <h2>Gear we've actually used</h2>
+    <a href="#" class="link">All buying guides →</a>
+  </div>
+  <div class="grid3">
+    <div class="gcard">
+      <div class="gcard-img"><img src="images/machine-black.jpg" alt="Black home espresso machine"></div>
+      <div class="gcard-body">
+        <span class="tag">Machines</span>
+        <h4>Best Beginner Espresso Machines</h4>
+        <p>Five machines that are forgiving to learn on without wasting money — tested over weeks of daily shots.</p>
+      </div>
+    </div>
+    <div class="gcard">
+      <div class="gcard-img"><img src="images/espresso-extract.jpg" alt="Espresso extracting into a glass"></div>
+      <div class="gcard-body">
+        <span class="tag">Grinders</span>
+        <h4>Best Espresso Grinder for Beginners</h4>
+        <p>The grinder matters more than the machine. Here's where to spend and where to save.</p>
+      </div>
+    </div>
+    <div class="gcard">
+      <div class="gcard-img"><img src="images/hero-counter.jpg" alt="Espresso setup on a counter"></div>
+      <div class="gcard-body">
+        <span class="tag">Budget</span>
+        <h4>Best Espresso Machine Under $500</h4>
+        <p>A complete starter setup that punches above its price — machine, grinder, and the small stuff.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec wrap" id="learn" style="padding-top:0;">
+  <div class="learn">
+    <div class="learn-img">
+      <img src="images/espresso-crema.jpg" alt="Espresso shot pouring with crema">
+    </div>
+    <div>
+      <div class="sec-head" style="margin-bottom:18px;"><h2>From first shot to dialed in</h2></div>
+      <ul class="learn-list">
+        <li><a href="#"><span class="n">01</span><span class="t">How to Pull Your First Espresso Shot</span></a></li>
+        <li><a href="#"><span class="n">02</span><span class="t">How to Dial In Espresso: Grind, Dose & Yield</span></a></li>
+        <li><a href="#"><span class="n">03</span><span class="t">Do You Really Need a Separate Grinder?</span></a></li>
+        <li><a href="#"><span class="n">04</span><span class="t">Pressurized vs Non-Pressurized Portafilters</span></a></li>
+        <li><a href="#"><span class="n">05</span><span class="t">9 Common Beginner Espresso Mistakes</span></a></li>
+        <li><a href="#"><span class="n">06</span><span class="t">Milk Frothing for Beginners</span></a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer id="about">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <div class="logo"><span class="mark"></span> Welcome to Espresso</div>
+        <p class="blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Affiliate Disclosure</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <p class="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves. Photos via Unsplash and Pexels, free for commercial use.</p>
+  </div>
+</footer>
+
+</body>
+</html>
