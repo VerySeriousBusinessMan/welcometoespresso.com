@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>9 Common Beginner Espresso Mistakes — Welcome to Espresso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#14100D; --bg-soft:#1E1813; --card:#221B15; --brass:#C79A5B; --brass-bright:#E3BC7E; --cream:#F2E9DC; --muted:#A89684; --line:#352B22; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Newsreader',serif; background:var(--bg); color:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 28px; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(20,16,13,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .inner { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.2rem; letter-spacing:-0.01em; color:var(--cream); display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo .mark { width:30px; height:30px; border-radius:50%; border:1.5px solid var(--brass); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .logo .mark::after { content:''; width:11px; height:11px; border-radius:50%; background:radial-gradient(circle at 35% 30%,var(--brass-bright),var(--brass) 70%); }
+  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; transition:color .2s; }
+  .nav-links a:hover { color:var(--brass-bright); }
+  @media(max-width:720px){ .nav-links{ display:none; } }
+  .article-header { padding:72px 0 56px; border-bottom:1px solid var(--line); }
+  .back-link { font-family:'Bricolage Grotesque',sans-serif; font-size:0.82rem; color:var(--brass); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-bottom:32px; transition:color .2s; }
+  .back-link:hover { color:var(--brass-bright); }
+  .article-eyebrow { font-family:'Bricolage Grotesque',sans-serif; font-size:0.74rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass); margin-bottom:20px; }
+  .article-header h1 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(2.2rem,4.5vw,3.6rem); line-height:1.05; letter-spacing:-0.03em; color:var(--cream); margin-bottom:22px; max-width:22ch; }
+  .article-header h1 .accent { color:var(--brass); font-family:'Newsreader',serif; font-style:italic; font-weight:400; }
+  .article-meta { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); display:flex; gap:24px; flex-wrap:wrap; }
+  .article-layout { display:grid; grid-template-columns:1fr 240px; gap:64px; padding:64px 0 96px; align-items:start; }
+  @media(max-width:960px){ .article-layout{ grid-template-columns:1fr; } }
+  .toc { position:sticky; top:80px; background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:28px; }
+  @media(max-width:960px){ .toc{ display:none; } }
+  .toc-title { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:16px; }
+  .toc ol { list-style:none; counter-reset:toc; }
+  .toc li { counter-increment:toc; margin-bottom:2px; }
+  .toc a { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); text-decoration:none; display:flex; gap:10px; padding:6px 0; transition:color .2s; line-height:1.3; }
+  .toc a::before { content:counter(toc,decimal-leading-zero); color:var(--line); font-size:0.72rem; padding-top:1px; flex-shrink:0; }
+  .toc a:hover { color:var(--brass-bright); }
+  .article-body { min-width:0; }
+  .prose { font-size:1.12rem; color:var(--cream); }
+  .prose p { margin-bottom:1.4em; }
+  .prose p:last-child { margin-bottom:0; }
+  .prose strong { color:var(--cream); font-weight:600; font-family:'Bricolage Grotesque',sans-serif; }
+  .mistake { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:32px 36px; margin-bottom:24px; }
+  .mistake-num { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:10px; }
+  .mistake h2 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.35rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:14px; line-height:1.15; }
+  .mistake p { font-size:1rem; color:var(--muted); line-height:1.65; margin-bottom:14px; }
+  .mistake p:last-child { margin-bottom:0; }
+  .mistake strong { color:var(--cream); font-family:'Bricolage Grotesque',sans-serif; font-weight:600; }
+  .fix-line { font-family:'Bricolage Grotesque',sans-serif; font-size:0.88rem; color:var(--brass); border-top:1px solid var(--line); padding-top:14px; margin-top:14px; }
+  .fix-line span { color:var(--muted); font-family:'Newsreader',serif; font-size:0.95rem; }
+  .divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+  .guide-cta { background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:40px 44px; margin-top:64px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; }
+  .guide-cta h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:8px; }
+  .guide-cta p { font-size:0.95rem; color:var(--muted); max-width:40ch; }
+  .btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.92rem; padding:15px 30px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; white-space:nowrap; }
+  .btn-primary { background:var(--brass); color:var(--bg); }
+  .btn-primary:hover { background:var(--brass-bright); transform:translateY(-2px); }
+  .btn-ghost { color:var(--cream); border:1px solid var(--line); }
+  .btn-ghost:hover { border-color:var(--brass); color:var(--brass-bright); }
+  footer { background:var(--bg-soft); border-top:1px solid var(--line); padding:56px 0 36px; }
+  footer .top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:28px; margin-bottom:36px; }
+  footer .blurb { color:var(--muted); max-width:34ch; font-size:1rem; }
+  .foot-links { display:flex; gap:30px; flex-wrap:wrap; font-family:'Bricolage Grotesque',sans-serif; }
+  .foot-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+  .foot-links a:hover { color:var(--brass-bright); }
+  .disclosure { font-family:'Bricolage Grotesque',sans-serif; font-size:0.78rem; color:var(--muted); opacity:0.7; border-top:1px solid var(--line); padding-top:24px; max-width:70ch; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap inner">
+    <a href="index.html" class="logo"><span class="mark"></span> Welcome to Espresso</a>
+    <ul class="nav-links">
+      <li><a href="index.html#start">Start Here</a></li>
+      <li><a href="index.html#guides">Buying Guides</a></li>
+      <li><a href="index.html#learn">Learn</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap article-header">
+  <a href="index.html" class="back-link">← Back to home</a>
+  <div class="article-eyebrow">Learn · Troubleshooting</div>
+  <h1>9 Common <span class="accent">Beginner Espresso</span> Mistakes</h1>
+  <div class="article-meta">
+    <span>9 min read</span>
+    <span>Fix these and your shots will improve overnight</span>
+  </div>
+</header>
+
+<div class="wrap article-layout">
+  <article class="article-body">
+
+    <div class="prose" style="margin-bottom:48px;">
+      <p>Most espresso problems aren't about gear. They're about a handful of easily avoidable mistakes that most beginners make — often without realizing it. Here are the nine most common ones, why they matter, and exactly how to fix them.</p>
+    </div>
+
+    <div class="mistake" id="stale-coffee">
+      <div class="mistake-num">Mistake 01</div>
+      <h2>Using stale coffee</h2>
+      <p>This is the single biggest mistake beginners make, and the hardest to spot because stale coffee doesn't look wrong. Coffee goes stale fast — whole beans start losing quality after 4–6 weeks post-roast, and ground coffee degrades within minutes. Old coffee produces flat, lifeless shots with no crema and a hollow, papery taste.</p>
+      <p>Check the <strong>roast date</strong> on your bag, not the best-by date. You want beans roasted within the last 2–5 weeks. If a bag doesn't have a roast date printed on it, that's a red flag.</p>
+      <div class="fix-line">The fix: <span>Buy from a local roaster or a subscription that ships fresh. Look for the roast date, not the "best by" date.</span></div>
+    </div>
+
+    <div class="mistake" id="no-preheat">
+      <div class="mistake-num">Mistake 02</div>
+      <h2>Not preheating the machine</h2>
+      <p>Espresso is brewed at around 200°F (93°C). If your machine hasn't reached stable temperature, every shot will be under-extracted — tasting sour and thin regardless of how good your grind and technique are. Most home machines need <strong>15–30 minutes</strong> to fully heat up.</p>
+      <p>Beyond the machine body, the portafilter and group head also need to be warm. A cold portafilter will drop the brewing temperature significantly. Run a blank shot (water only) through the group head after warmup to pre-heat everything before loading your coffee.</p>
+      <div class="fix-line">The fix: <span>Turn your machine on before you do anything else. Run a blank shot through the group head before pulling your first real shot.</span></div>
+    </div>
+
+    <div class="mistake" id="not-weighing">
+      <div class="mistake-num">Mistake 03</div>
+      <h2>Not weighing dose and yield</h2>
+      <p>Eyeballing your coffee dose introduces enough variation to make your shots wildly inconsistent from day to day. A gram or two difference in dose changes shot time significantly. Without a scale, you're guessing — and you can't dial in a guess.</p>
+      <p>Weigh both your dose (coffee in, typically 18g) and your yield (espresso out, typically 36g). A basic kitchen scale accurate to 0.1g costs $15–$25 and is the best cheap upgrade in espresso.</p>
+      <div class="fix-line">The fix: <span>Weigh everything. Dose in grams, yield in grams. Stop the shot by weight, not by time or by eye.</span></div>
+    </div>
+
+    <div class="mistake" id="crooked-tamp">
+      <div class="mistake-num">Mistake 04</div>
+      <h2>Tamping at an angle</h2>
+      <p>A crooked tamp creates an uneven puck — thicker on one side, thinner on the other. Water always finds the path of least resistance, so it blasts through the thin side while the thick side barely extracts. The result is "channeling": a shot that tastes simultaneously bitter and sour, with no way to fix it mid-brew.</p>
+      <p>Tamp straight down, perpendicular to the basket. Use the rim of the portafilter as a visual guide. Consistent 30 lbs of pressure is less important than the angle — a firm, level tamp at 20 lbs is better than a heavy, tilted one.</p>
+      <div class="fix-line">The fix: <span>Focus on tamping straight, not tamping hard. Use a self-leveling tamper if consistency is a recurring issue.</span></div>
+    </div>
+
+    <div class="mistake" id="changing-two-things">
+      <div class="mistake-num">Mistake 05</div>
+      <h2>Changing two variables at once</h2>
+      <p>When a shot tastes bad, the temptation is to fix everything simultaneously — adjust the grind, change the dose, alter the yield. But if you change multiple things and the next shot is better, you don't know which change helped. If it's worse, you don't know which one made it worse.</p>
+      <p>Dialing in is a process of controlled experiments. Change one variable, pull one shot, evaluate. Then decide what to change next.</p>
+      <div class="fix-line">The fix: <span>One change at a time. Write down what you changed and what happened. Your shot log is your most useful tool.</span></div>
+    </div>
+
+    <div class="mistake" id="wrong-grind">
+      <div class="mistake-num">Mistake 06</div>
+      <h2>Using a grinder that can't grind fine enough</h2>
+      <p>Not every grinder can produce grounds fine enough for espresso. Blade grinders, most manual grinders under $50, and many budget electric grinders don't have the range to hit espresso-fine grinds. If your shot runs in 10 seconds no matter how you adjust, your grinder has hit its limit.</p>
+      <p>For espresso, you need a burr grinder with an espresso setting — either a flat or conical burr model rated for espresso use. This is why the grinder is the most important purchase in your setup.</p>
+      <div class="fix-line">The fix: <span>Verify your grinder is rated for espresso before buying. If you already own one that can't go fine enough, upgrading the grinder will do more for your shots than any other change.</span></div>
+    </div>
+
+    <div class="mistake" id="skipping-distribution">
+      <div class="mistake-num">Mistake 07</div>
+      <h2>Skipping the distribution step</h2>
+      <p>Coffee grounds don't fall evenly into the portafilter basket. You'll often get a mound in the center, clumps from static, or an uneven surface. Tamping over an uneven bed locks in all those inconsistencies — the tamp doesn't fix them, it seals them in place.</p>
+      <p>Before tamping, take a few seconds to distribute: tap the side of the portafilter gently, then use a finger or a distribution tool to level the surface. A WDT (Weiss Distribution Technique) tool — essentially a thin needle stirrer — breaks up clumps effectively and cheaply.</p>
+      <div class="fix-line">The fix: <span>Always distribute before tamping. A level surface before the tamp is essential for an even extraction.</span></div>
+    </div>
+
+    <div class="mistake" id="not-purging">
+      <div class="mistake-num">Mistake 08</div>
+      <h2>Not purging the steam wand</h2>
+      <p>After steaming milk, a small amount of milk gets drawn back into the steam wand tip. If you don't purge it immediately — by briefly opening the steam valve to blast it out — that milk dries inside the wand and eventually blocks it. It also re-introduces bacterial growth into the wand.</p>
+      <p>Purge the wand immediately after every steam, and wipe the tip with a damp cloth. If your wand is already partially blocked, soak the tip in hot water for a few minutes to soften the buildup.</p>
+      <div class="fix-line">The fix: <span>Purge the steam wand and wipe it down after every use. Make it automatic — done before you even set down the pitcher.</span></div>
+    </div>
+
+    <div class="mistake" id="neglecting-cleaning">
+      <div class="mistake-num">Mistake 09</div>
+      <h2>Neglecting machine cleaning</h2>
+      <p>Coffee oils are acidic and go rancid. Every shot leaves a thin film on your group head, portafilter, and basket. Over days and weeks, that buildup gives your shots a stale, bitter undertone that no amount of grind adjustment will fix — because it's not your coffee, it's your dirty machine.</p>
+      <p>Rinse your portafilter basket after every session. Run a blank shot through the group head. Backflush with water weekly (or with espresso cleaning tablets monthly if your machine supports it). A clean machine is a consistent machine.</p>
+      <div class="fix-line">The fix: <span>Rinse the portafilter basket after every use. Do a proper cleaning with espresso detergent at least once a month.</span></div>
+    </div>
+
+    <div class="guide-cta">
+      <div>
+        <h3>Ready to pull a better shot?</h3>
+        <p>Now that you know what to avoid, read the step-by-step guide to pulling your first great espresso.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="first-espresso-shot.html" class="btn btn-primary">Pull your first shot →</a>
+        <a href="index.html#learn" class="btn btn-ghost">All guides</a>
+      </div>
+    </div>
+
+  </article>
+
+  <aside>
+    <nav class="toc">
+      <div class="toc-title">The 9 mistakes</div>
+      <ol>
+        <li><a href="#stale-coffee">Stale coffee</a></li>
+        <li><a href="#no-preheat">Not preheating</a></li>
+        <li><a href="#not-weighing">Not weighing</a></li>
+        <li><a href="#crooked-tamp">Crooked tamp</a></li>
+        <li><a href="#changing-two-things">Changing two things</a></li>
+        <li><a href="#wrong-grind">Wrong grinder</a></li>
+        <li><a href="#skipping-distribution">Skipping distribution</a></li>
+        <li><a href="#not-purging">Not purging wand</a></li>
+        <li><a href="#neglecting-cleaning">Neglecting cleaning</a></li>
+      </ol>
+    </nav>
+  </aside>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="index.html" class="logo"><span class="mark"></span> Welcome to Espresso</a>
+        <p class="blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#">About</a><a href="#">Contact</a><a href="#">Affiliate Disclosure</a><a href="#">Privacy</a>
+      </div>
+    </div>
+    <p class="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves.</p>
+  </div>
+</footer>
+</body>
+</html>

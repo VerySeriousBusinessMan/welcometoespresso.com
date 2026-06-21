@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Milk Frothing for Beginners — Welcome to Espresso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#14100D; --bg-soft:#1E1813; --card:#221B15; --brass:#C79A5B; --brass-bright:#E3BC7E; --cream:#F2E9DC; --muted:#A89684; --line:#352B22; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Newsreader',serif; background:var(--bg); color:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 28px; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(20,16,13,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .inner { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.2rem; letter-spacing:-0.01em; color:var(--cream); display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo .mark { width:30px; height:30px; border-radius:50%; border:1.5px solid var(--brass); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .logo .mark::after { content:''; width:11px; height:11px; border-radius:50%; background:radial-gradient(circle at 35% 30%,var(--brass-bright),var(--brass) 70%); }
+  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; transition:color .2s; }
+  .nav-links a:hover { color:var(--brass-bright); }
+  @media(max-width:720px){ .nav-links{ display:none; } }
+  .article-header { padding:72px 0 56px; border-bottom:1px solid var(--line); }
+  .back-link { font-family:'Bricolage Grotesque',sans-serif; font-size:0.82rem; color:var(--brass); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-bottom:32px; transition:color .2s; }
+  .back-link:hover { color:var(--brass-bright); }
+  .article-eyebrow { font-family:'Bricolage Grotesque',sans-serif; font-size:0.74rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass); margin-bottom:20px; }
+  .article-header h1 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(2.2rem,4.5vw,3.6rem); line-height:1.05; letter-spacing:-0.03em; color:var(--cream); margin-bottom:22px; max-width:22ch; }
+  .article-header h1 .accent { color:var(--brass); font-family:'Newsreader',serif; font-style:italic; font-weight:400; }
+  .article-meta { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); display:flex; gap:24px; flex-wrap:wrap; }
+  .article-layout { display:grid; grid-template-columns:1fr 240px; gap:64px; padding:64px 0 96px; align-items:start; }
+  @media(max-width:960px){ .article-layout{ grid-template-columns:1fr; } }
+  .toc { position:sticky; top:80px; background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:28px; }
+  @media(max-width:960px){ .toc{ display:none; } }
+  .toc-title { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:16px; }
+  .toc ol { list-style:none; counter-reset:toc; }
+  .toc li { counter-increment:toc; margin-bottom:2px; }
+  .toc a { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); text-decoration:none; display:flex; gap:10px; padding:6px 0; transition:color .2s; line-height:1.3; }
+  .toc a::before { content:counter(toc,decimal-leading-zero); color:var(--line); font-size:0.72rem; padding-top:1px; flex-shrink:0; }
+  .toc a:hover { color:var(--brass-bright); }
+  .article-body { min-width:0; }
+  .prose { font-size:1.12rem; color:var(--cream); }
+  .prose p { margin-bottom:1.4em; }
+  .prose p:last-child { margin-bottom:0; }
+  .prose strong { color:var(--cream); font-weight:600; font-family:'Bricolage Grotesque',sans-serif; }
+  .guide-section { margin-bottom:64px; }
+  .guide-section:last-child { margin-bottom:0; }
+  .section-number { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:12px; }
+  .guide-section h2 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(1.6rem,2.8vw,2.1rem); letter-spacing:-0.02em; color:var(--cream); margin-bottom:24px; line-height:1.1; }
+  .guide-section h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:1.2rem; letter-spacing:-0.01em; color:var(--cream); margin:32px 0 14px; }
+  .callout { background:var(--bg-soft); border:1px solid var(--line); border-left:3px solid var(--brass); border-radius:6px; padding:22px 26px; margin:32px 0; }
+  .callout-label { font-family:'Bricolage Grotesque',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass); margin-bottom:8px; }
+  .callout p { font-size:1rem; color:var(--muted); margin:0; }
+  .callout p+p { margin-top:0.8em; }
+  .step-list { list-style:none; margin:24px 0 32px; }
+  .step-list li { display:flex; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step-list li:last-child { border-bottom:1px solid var(--line); }
+  .step-num { font-family:'Bricolage Grotesque',sans-serif; font-size:1.4rem; font-weight:800; color:var(--brass); opacity:0.5; min-width:36px; line-height:1; padding-top:3px; }
+  .step-body h4 { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:1.05rem; color:var(--cream); margin-bottom:6px; }
+  .step-body p { font-size:0.98rem; color:var(--muted); line-height:1.6; margin:0; }
+  .drink-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; margin:28px 0; }
+  @media(max-width:680px){ .drink-grid{ grid-template-columns:1fr; } }
+  .drink-card { background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px; }
+  .drink-card h4 { font-family:'Bricolage Grotesque',sans-serif; font-weight:700; font-size:1rem; color:var(--cream); margin-bottom:8px; }
+  .drink-card p { font-size:0.88rem; color:var(--muted); line-height:1.5; margin:0; }
+  .drink-ratio { font-family:'Bricolage Grotesque',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--brass); margin-bottom:8px; }
+  .divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+  .guide-cta { background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:40px 44px; margin-top:64px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; }
+  .guide-cta h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:8px; }
+  .guide-cta p { font-size:0.95rem; color:var(--muted); max-width:40ch; }
+  .btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.92rem; padding:15px 30px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; white-space:nowrap; }
+  .btn-primary { background:var(--brass); color:var(--bg); }
+  .btn-primary:hover { background:var(--brass-bright); transform:translateY(-2px); }
+  .btn-ghost { color:var(--cream); border:1px solid var(--line); }
+  .btn-ghost:hover { border-color:var(--brass); color:var(--brass-bright); }
+  footer { background:var(--bg-soft); border-top:1px solid var(--line); padding:56px 0 36px; }
+  footer .top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:28px; margin-bottom:36px; }
+  footer .blurb { color:var(--muted); max-width:34ch; font-size:1rem; }
+  .foot-links { display:flex; gap:30px; flex-wrap:wrap; font-family:'Bricolage Grotesque',sans-serif; }
+  .foot-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+  .foot-links a:hover { color:var(--brass-bright); }
+  .disclosure { font-family:'Bricolage Grotesque',sans-serif; font-size:0.78rem; color:var(--muted); opacity:0.7; border-top:1px solid var(--line); padding-top:24px; max-width:70ch; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap inner">
+    <a href="index.html" class="logo"><span class="mark"></span> Welcome to Espresso</a>
+    <ul class="nav-links">
+      <li><a href="index.html#start">Start Here</a></li>
+      <li><a href="index.html#guides">Buying Guides</a></li>
+      <li><a href="index.html#learn">Learn</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap article-header">
+  <a href="index.html" class="back-link">← Back to home</a>
+  <div class="article-eyebrow">Learn · Technique</div>
+  <h1>Milk Frothing <span class="accent">for Beginners</span></h1>
+  <div class="article-meta">
+    <span>9 min read</span>
+    <span>From bubbly foam to silky microfoam</span>
+  </div>
+</header>
+
+<div class="wrap article-layout">
+  <article class="article-body">
+
+    <div class="prose">
+      <p>Steamed milk is what separates a great home espresso setup from a café experience. A well-pulled shot is satisfying on its own, but the ability to make a silky latte or a proper cappuccino opens up the full range of espresso drinks. The good news: steaming milk is a learnable skill. The bad news: it takes practice. Expect a few weeks of bubbly, burnt-tasting attempts before things click.</p>
+    </div>
+
+    <hr class="divider">
+
+    <div class="guide-section" id="equipment">
+      <div class="section-number">01</div>
+      <h2>What you need</h2>
+      <div class="prose">
+        <p><strong>A machine with a steam wand.</strong> Not all home espresso machines have one — if yours doesn't, a standalone milk frother is a decent alternative, though it can't produce true microfoam.</p>
+        <p><strong>A stainless steel steaming pitcher.</strong> A 12 oz pitcher for single drinks, 20 oz for two. Stainless lets you feel the temperature through the metal, which is your main temperature feedback mechanism.</p>
+        <p><strong>A thermometer (optional but helpful at first).</strong> Target 140–155°F (60–68°C) for steamed milk. Once you develop a feel for temperature through the pitcher, you won't need it anymore.</p>
+        <p><strong>Whole milk to start.</strong> Full-fat dairy milk is the most forgiving for learning. It produces stable microfoam reliably. Master it before experimenting with oat, almond, or other alternatives — they behave differently and are harder to work with.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="guide-section" id="understanding-foam">
+      <div class="section-number">02</div>
+      <h2>Understanding milk and foam</h2>
+      <div class="prose">
+        <p>Steam heats and aerates milk simultaneously. The goal is <strong>microfoam</strong> — millions of tiny bubbles so small the milk looks glossy and pourable, like wet paint. This is different from the large, dry, Starbucks-style foam that sits on top of a drink like shaving cream.</p>
+        <p>Microfoam integrates with the espresso rather than floating on top. It creates a creamy, sweet texture and is what makes latte art possible.</p>
+        <p>The two phases of steaming milk are: <strong>aeration</strong> (adding air to stretch the milk) and <strong>heating</strong> (swirling to integrate the foam and reach temperature). Get the aeration phase right first — everything else follows from it.</p>
+      </div>
+      <div class="callout">
+        <div class="callout-label">Why cold milk?</div>
+        <p>Always start with cold milk straight from the fridge. Cold milk gives you more time to aerate before hitting your temperature target. Warm milk hits temperature fast and leaves you no window to add air.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="guide-section" id="technique">
+      <div class="section-number">03</div>
+      <h2>The technique, step by step</h2>
+      <ul class="step-list">
+        <li>
+          <span class="step-num">1</span>
+          <div class="step-body">
+            <h4>Purge the steam wand</h4>
+            <p>Before putting the wand in milk, open the steam valve for 1–2 seconds to blast out any condensed water sitting in the tip. Water in your milk dilutes flavor and disrupts the foam structure.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">2</span>
+          <div class="step-body">
+            <h4>Position the wand just below the surface</h4>
+            <p>Submerge the wand tip about 1 cm below the milk surface, angled slightly off-center to create a swirling vortex. The tip should not be deep in the pitcher — you need it near the surface to incorporate air.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">3</span>
+          <div class="step-body">
+            <h4>Open the steam valve fully and aerate</h4>
+            <p>You're listening for a soft, paper-tearing hiss — not a loud roaring sound. The hiss means you're drawing in small amounts of air. A roar means the wand is too deep and you're just heating. Lower the pitcher slightly if you don't hear the hiss.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">4</span>
+          <div class="step-body">
+            <h4>Submerge and heat</h4>
+            <p>Once the milk has grown in volume slightly (for a latte, you want about 20–25% more volume), lower the wand deeper into the pitcher to stop adding air and just spin the milk. The vortex integrates the foam and finishes heating. Keep swirling until you hit your target temperature.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">5</span>
+          <div class="step-body">
+            <h4>Stop and purge again</h4>
+            <p>Close the valve and remove the wand. Immediately wipe the wand with a damp cloth and give it a quick purge. Tap the pitcher on the counter to pop any large bubbles, then swirl gently until the milk looks glossy and uniform.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <hr class="divider">
+
+    <div class="guide-section" id="drinks">
+      <div class="section-number">04</div>
+      <h2>Foam ratios by drink</h2>
+      <div class="prose">
+        <p>Different drinks use the same steamed milk but in different proportions of liquid milk to foam.</p>
+      </div>
+      <div class="drink-grid">
+        <div class="drink-card">
+          <div class="drink-ratio">Latte</div>
+          <h4>Mostly milk, thin foam</h4>
+          <p>~20% foam, 80% steamed milk. Subtle microfoam, creamy and mild. Largest volume drink — 8–12 oz total.</p>
+        </div>
+        <div class="drink-card">
+          <div class="drink-ratio">Cappuccino</div>
+          <h4>Equal thirds</h4>
+          <p>⅓ espresso, ⅓ steamed milk, ⅓ foam. More intense, smaller volume — 5–6 oz. The foam should be thick but still microfoam.</p>
+        </div>
+        <div class="drink-card">
+          <div class="drink-ratio">Flat White</div>
+          <h4>Less milk, velvety foam</h4>
+          <p>Similar to a latte but smaller (5–6 oz) with a higher espresso-to-milk ratio. Very thin microfoam, almost no visible foam layer.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="guide-section" id="mistakes">
+      <div class="section-number">05</div>
+      <h2>Common frothing mistakes</h2>
+      <div class="prose">
+        <h3>Large bubbles that won't go away</h3>
+        <p>You added air too aggressively — the wand was too close to the surface and pulled in too much air too fast. Tap the pitcher firmly on the counter and swirl to pop them. Next time, lower the wand 1–2mm deeper before opening steam.</p>
+        <h3>Milk overheated — tastes scorched</h3>
+        <p>You steamed past 160°F (71°C). The milk proteins denature at high temperatures and produce a slightly bitter, "cooked" flavor. Always stop when the pitcher becomes too hot to hold comfortably — around 150°F for most people's hands. Use a thermometer while you're learning.</p>
+        <h3>Milk is hot but there's no foam</h3>
+        <p>The wand was too deep during the aeration phase — you heated without incorporating air. Next time, start with the tip just below the surface and listen for that paper-tearing hiss before submerging deeper.</p>
+        <h3>Foam separates from the milk</h3>
+        <p>You didn't swirl enough during the heating phase. The vortex integrates the foam into the milk. Keep the swirl going right until you stop the steam.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="guide-section" id="latte-art">
+      <div class="section-number">06</div>
+      <h2>A note on latte art</h2>
+      <div class="prose">
+        <p>Latte art is the result of good microfoam poured correctly — it's not a separate technique so much as a sign that your steaming is working. If your milk is glossy and integrated and your pour is steady, simple patterns like a heart or a rosette will start to appear naturally.</p>
+        <p>Don't chase latte art until your microfoam is consistent. The art is a byproduct of the fundamentals. Focus on producing silky, pourable milk first. Once that's reliable, pour from a low height with a steady hand, and the patterns will follow.</p>
+      </div>
+      <div class="callout">
+        <div class="callout-label">Practice tip</div>
+        <p>Steaming milk is the one skill in espresso where repetitions matter more than reading. Practice daily for two weeks. By the end you'll have an intuitive feel for temperature, texture, and pour that no amount of reading can replicate.</p>
+      </div>
+    </div>
+
+    <div class="guide-cta">
+      <div>
+        <h3>Got the basics down?</h3>
+        <p>Go back to the complete beginner's guide to tie everything together — from your first shot to your first latte.</p>
+      </div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;">
+        <a href="beginners-guide.html" class="btn btn-primary">Complete guide →</a>
+        <a href="index.html#learn" class="btn btn-ghost">All guides</a>
+      </div>
+    </div>
+
+  </article>
+
+  <aside>
+    <nav class="toc">
+      <div class="toc-title">In this guide</div>
+      <ol>
+        <li><a href="#equipment">What you need</a></li>
+        <li><a href="#understanding-foam">Understanding foam</a></li>
+        <li><a href="#technique">The technique</a></li>
+        <li><a href="#drinks">Foam ratios by drink</a></li>
+        <li><a href="#mistakes">Common mistakes</a></li>
+        <li><a href="#latte-art">Latte art</a></li>
+      </ol>
+    </nav>
+  </aside>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="index.html" class="logo"><span class="mark"></span> Welcome to Espresso</a>
+        <p class="blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#">About</a><a href="#">Contact</a><a href="#">Affiliate Disclosure</a><a href="#">Privacy</a>
+      </div>
+    </div>
+    <p class="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves.</p>
+  </div>
+</footer>
+</body>
+</html>
