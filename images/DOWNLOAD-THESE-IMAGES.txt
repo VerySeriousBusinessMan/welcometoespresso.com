@@ -1,0 +1,22 @@
+Save these 4 images into THIS folder with these EXACT filenames.
+All are free for commercial use (Unsplash / Pexels — no attribution required).
+
+1. hero-counter.jpg
+   https://images.unsplash.com/photo-1757495153470-9b86adf2bf3b?fm=jpg&q=70&w=1600
+   (used for the hero image + the "Under $500" guide card)
+
+2. espresso-crema.jpg
+   https://images.pexels.com/photos/9050518/pexels-photo-9050518.jpeg?auto=compress&cs=tinysrgb&w=1200
+   (used for the "Start Here" featured block + the Learn section photo)
+
+3. machine-black.jpg
+   https://images.unsplash.com/photo-1560885521-4e61e9bc1631?fm=jpg&q=70&w=900
+   (used for the "Best Beginner Espresso Machines" guide card)
+
+4. espresso-extract.jpg
+   https://images.pexels.com/photos/9050528/pexels-photo-9050528.jpeg?auto=compress&cs=tinysrgb&w=900
+   (used for the "Best Espresso Grinder" guide card)
+
+HOW: open each link in your browser, right-click > Save Image As,
+and save it into this /images folder using the filename listed above.
+The site won't show photos until these 4 files are here.
