@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Complete Beginner's Guide to Home Espresso — Welcome to Espresso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #14100D;
+    --bg-soft: #1E1813;
+    --card: #221B15;
+    --brass: #C79A5B;
+    --brass-bright: #E3BC7E;
+    --cream: #F2E9DC;
+    --muted: #A89684;
+    --line: #352B22;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Newsreader', serif; background:var(--bg); color:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 28px; }
+  img { display:block; max-width:100%; }
+
+  /* Nav */
+  nav { position:sticky; top:0; z-index:50; background:rgba(20,16,13,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .inner { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.2rem; letter-spacing:-0.01em; color:var(--cream); display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .logo .mark { width:30px; height:30px; border-radius:50%; border:1.5px solid var(--brass); display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  .logo .mark::after { content:''; width:11px; height:11px; border-radius:50%; background:radial-gradient(circle at 35% 30%, var(--brass-bright), var(--brass) 70%); }
+  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; font-weight:400; transition:color .2s; }
+  .nav-links a:hover { color:var(--brass-bright); }
+  @media(max-width:720px){ .nav-links{ display:none; } }
+
+  /* Article header */
+  .article-header { padding:72px 0 56px; border-bottom:1px solid var(--line); }
+  .back-link { font-family:'Bricolage Grotesque',sans-serif; font-size:0.82rem; color:var(--brass); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-bottom:32px; transition:color .2s; }
+  .back-link:hover { color:var(--brass-bright); }
+  .article-eyebrow { font-family:'Bricolage Grotesque',sans-serif; font-size:0.74rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass); margin-bottom:20px; }
+  .article-header h1 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(2.2rem,4.5vw,3.6rem); line-height:1.05; letter-spacing:-0.03em; color:var(--cream); margin-bottom:22px; max-width:22ch; }
+  .article-header h1 .accent { color:var(--brass); font-family:'Newsreader',serif; font-style:italic; font-weight:400; }
+  .article-meta { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); display:flex; gap:24px; flex-wrap:wrap; }
+  .article-meta span { display:flex; align-items:center; gap:6px; }
+
+  /* Layout: article + TOC sidebar */
+  .article-layout { display:grid; grid-template-columns:1fr 240px; gap:64px; padding:64px 0 96px; align-items:start; }
+  @media(max-width:960px){ .article-layout{ grid-template-columns:1fr; } }
+
+  /* TOC */
+  .toc { position:sticky; top:80px; background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:28px; }
+  @media(max-width:960px){ .toc{ display:none; } }
+  .toc-title { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:16px; }
+  .toc ol { list-style:none; counter-reset:toc; }
+  .toc li { counter-increment:toc; margin-bottom:2px; }
+  .toc a { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); text-decoration:none; display:flex; gap:10px; padding:6px 0; transition:color .2s; line-height:1.3; }
+  .toc a::before { content:counter(toc,decimal-leading-zero); color:var(--line); font-size:0.72rem; padding-top:1px; flex-shrink:0; }
+  .toc a:hover { color:var(--brass-bright); }
+
+  /* Article body */
+  .article-body { min-width:0; }
+
+  /* Hero image */
+  .article-hero { border-radius:10px; overflow:hidden; aspect-ratio:16/7; margin-bottom:56px; position:relative; }
+  .article-hero img { width:100%; height:100%; object-fit:cover; filter:brightness(0.88) saturate(1.05); }
+  .photo-credit { font-family:'Bricolage Grotesque',sans-serif; font-size:0.68rem; color:var(--muted); opacity:0.55; position:absolute; bottom:8px; right:10px; }
+
+  /* Prose */
+  .prose { font-size:1.12rem; color:var(--cream); }
+  .prose p { margin-bottom:1.4em; }
+  .prose p:last-child { margin-bottom:0; }
+  .prose strong { color:var(--cream); font-weight:600; font-family:'Bricolage Grotesque',sans-serif; }
+  .prose em { font-style:italic; color:var(--muted); }
+  .prose a { color:var(--brass); text-decoration:underline; text-decoration-color:rgba(199,154,91,0.3); text-underline-offset:3px; transition:color .2s; }
+  .prose a:hover { color:var(--brass-bright); }
+
+  /* Section headings */
+  .guide-section { margin-bottom:64px; }
+  .guide-section:last-child { margin-bottom:0; }
+  .section-number { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:12px; }
+  .guide-section h2 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(1.6rem,2.8vw,2.1rem); letter-spacing:-0.02em; color:var(--cream); margin-bottom:24px; line-height:1.1; }
+  .guide-section h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:1.2rem; letter-spacing:-0.01em; color:var(--cream); margin:32px 0 14px; }
+
+  /* Callout box */
+  .callout { background:var(--bg-soft); border:1px solid var(--line); border-left:3px solid var(--brass); border-radius:6px; padding:22px 26px; margin:32px 0; }
+  .callout-label { font-family:'Bricolage Grotesque',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass); margin-bottom:8px; }
+  .callout p { font-size:1rem; color:var(--muted); margin:0; }
+  .callout p + p { margin-top:0.8em; }
+
+  /* Step list */
+  .step-list { list-style:none; margin:24px 0 32px; }
+  .step-list li { display:flex; gap:20px; padding:20px 0; border-top:1px solid var(--line); }
+  .step-list li:last-child { border-bottom:1px solid var(--line); }
+  .step-num { font-family:'Bricolage Grotesque',sans-serif; font-size:1.4rem; font-weight:800; color:var(--brass); opacity:0.5; min-width:36px; line-height:1; padding-top:3px; }
+  .step-body h4 { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:1.05rem; color:var(--cream); margin-bottom:6px; }
+  .step-body p { font-size:0.98rem; color:var(--muted); line-height:1.6; margin:0; }
+
+  /* Gear table */
+  .gear-table { width:100%; border-collapse:collapse; margin:28px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:0.9rem; }
+  .gear-table th { text-align:left; font-size:0.7rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); padding:10px 16px; border-bottom:1px solid var(--line); }
+  .gear-table td { padding:14px 16px; border-bottom:1px solid var(--line); color:var(--cream); vertical-align:top; line-height:1.4; }
+  .gear-table tr:last-child td { border-bottom:none; }
+  .gear-table td:first-child { color:var(--muted); white-space:nowrap; }
+  .gear-table td:last-child { color:var(--muted); font-size:0.85rem; }
+  .gear-table .price { color:var(--brass); font-weight:600; }
+
+  /* Problem/solution */
+  .troubleshoot { display:grid; gap:16px; margin:28px 0; }
+  .ts-card { background:var(--card); border:1px solid var(--line); border-radius:8px; padding:22px 24px; }
+  .ts-problem { font-family:'Bricolage Grotesque',sans-serif; font-size:0.68rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); margin-bottom:6px; }
+  .ts-card h4 { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:1rem; color:var(--cream); margin-bottom:10px; }
+  .ts-card p { font-size:0.95rem; color:var(--muted); line-height:1.55; margin:0; }
+
+  /* Divider */
+  .divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+
+  /* CTA block */
+  .guide-cta { background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:40px 44px; margin-top:64px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; }
+  .guide-cta h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:8px; }
+  .guide-cta p { font-size:0.95rem; color:var(--muted); max-width:40ch; }
+  .btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.92rem; padding:15px 30px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; white-space:nowrap; }
+  .btn-primary { background:var(--brass); color:var(--bg); }
+  .btn-primary:hover { background:var(--brass-bright); transform:translateY(-2px); }
+  .btn-ghost { color:var(--cream); border:1px solid var(--line); }
+  .btn-ghost:hover { border-color:var(--brass); color:var(--brass-bright); }
+
+  /* Footer */
+  footer { background:var(--bg-soft); border-top:1px solid var(--line); padding:56px 0 36px; }
+  footer .top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:28px; margin-bottom:36px; }
+  footer .logo { margin-bottom:14px; }
+  footer .blurb { color:var(--muted); max-width:34ch; font-size:1rem; }
+  .foot-links { display:flex; gap:30px; flex-wrap:wrap; font-family:'Bricolage Grotesque',sans-serif; }
+  .foot-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+  .foot-links a:hover { color:var(--brass-bright); }
+  .disclosure { font-family:'Bricolage Grotesque',sans-serif; font-size:0.78rem; color:var(--muted); opacity:0.7; border-top:1px solid var(--line); padding-top:24px; max-width:70ch; }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap inner">
+    <a href="index.html" class="logo"><span class="mark"></span> Welcome to Espresso</a>
+    <ul class="nav-links">
+      <li><a href="index.html#start">Start Here</a></li>
+      <li><a href="index.html#guides">Buying Guides</a></li>
+      <li><a href="index.html#learn">Learn</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap article-header">
+  <a href="index.html" class="back-link">← Back to home</a>
+  <div class="article-eyebrow">Start Here · Beginner's Guide</div>
+  <h1>The Complete Beginner's Guide to<br><span class="accent">Home Espresso</span></h1>
+  <div class="article-meta">
+    <span>15 min read</span>
+    <span>Everything you need before spending a dollar</span>
+  </div>
+</header>
+
+<div class="wrap article-layout">
+
+  <!-- Main content -->
+  <article class="article-body">
+
+    <div class="article-hero">
+      <img src="https://images.unsplash.com/photo-1757495153470-9b86adf2bf3b?fm=jpg&q=70&w=1600&auto=format&fit=crop" alt="Home espresso setup on a kitchen counter">
+      <span class="photo-credit">Photo: Dev Benjamin / Unsplash</span>
+    </div>
+
+    <div class="prose">
+      <p>Home espresso has a reputation for being complicated, expensive, and obsessive. Some of that reputation is earned. But it doesn't have to be your experience. Millions of people pull great shots every morning without fussing over pressure curves or buying a $1,500 grinder.</p>
+      <p>This guide covers everything you need to know before you spend a single dollar — how espresso actually works, what equipment matters (and what doesn't), what a realistic budget looks like, and exactly what to do the first time you pull a shot. Read it once, and you'll have a clearer picture than most people who've been doing this for years.</p>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Section 1 -->
+    <div class="guide-section" id="what-is-espresso">
+      <div class="section-number">01</div>
+      <h2>What is espresso, actually?</h2>
+      <div class="prose">
+        <p>Espresso is coffee brewed under pressure. Hot water — around 200°F (93°C) — is forced through a compact puck of finely ground coffee at roughly 9 bars of pressure, extracting a concentrated shot in about 25–30 seconds. The result is thick, intense, and topped with a reddish-brown foam called <strong>crema</strong>.</p>
+        <p>That's it. The mystique around espresso often obscures how straightforward the concept is. What makes it tricky is the narrow margin for error: small changes in grind size, dose, or water temperature have a big effect on the final cup. That sensitivity is what people mean when they talk about "dialing in."</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Worth knowing</div>
+        <p>Espresso is not a roast level or a type of bean — it's a brewing method. You can make espresso with any coffee. Light roasts, dark roasts, single-origins, blends. The "espresso roast" label on a bag is a suggestion, not a requirement.</p>
+      </div>
+
+      <div class="prose">
+        <h3>Why make it at home?</h3>
+        <p>A café latte costs $5–7. Made at home with decent gear, the same drink costs under $1 in ingredients. A home setup pays for itself fast if you're a daily coffee drinker. Beyond the money, there's real satisfaction in dialing in a shot — it's a small, repeatable craft that gets better with practice.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Section 2 -->
+    <div class="guide-section" id="equipment">
+      <div class="section-number">02</div>
+      <h2>The equipment you actually need</h2>
+      <div class="prose">
+        <p>You need three things to make espresso at home: a machine, a grinder, and fresh coffee. Everything else is optional.</p>
+      </div>
+
+      <table class="gear-table">
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>What it does</th>
+            <th class="price">Budget range</th>
+            <th>Can you skip it?</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Espresso machine</td>
+            <td>Heats water and generates the pressure to brew your shot</td>
+            <td class="price">$200 – $700+</td>
+            <td>No</td>
+          </tr>
+          <tr>
+            <td>Grinder</td>
+            <td>Grinds coffee fresh, which is essential for good espresso</td>
+            <td class="price">$100 – $300+</td>
+            <td>No — pre-ground coffee goes stale fast and won't dial in</td>
+          </tr>
+          <tr>
+            <td>Scale</td>
+            <td>Measures dose (coffee in) and yield (espresso out) for consistency</td>
+            <td class="price">$15 – $50</td>
+            <td>Technically yes, but you'll waste a lot of coffee without one</td>
+          </tr>
+          <tr>
+            <td>Tamper</td>
+            <td>Packs the coffee puck evenly before brewing</td>
+            <td class="price">$20 – $60</td>
+            <td>Most machines include one, though aftermarket tampers are better</td>
+          </tr>
+          <tr>
+            <td>Fresh coffee</td>
+            <td>Whole beans roasted within the last 2–4 weeks</td>
+            <td class="price">$15 – $25 / 12oz</td>
+            <td>No</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="prose">
+        <h3>The grinder matters more than the machine</h3>
+        <p>This surprises most beginners. A $150 grinder paired with a $250 machine will consistently outperform a cheap grinder paired with a $600 machine. The grinder controls grind size and consistency — both of which have a bigger impact on your shot than the machine's pressure profile or boiler type.</p>
+        <p>If you're working with a tight budget, tilt it toward the grinder. A mid-range machine with a good grinder is the winning combination.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Beginner recommendation</div>
+        <p><strong>Machine:</strong> Breville Bambino Plus (~$300) or De'Longhi Stilosa (~$150 for a true budget start).</p>
+        <p><strong>Grinder:</strong> Baratza Encore ESP (~$195) or Breville Smart Grinder Pro (~$200). Both have fine enough grind settings for espresso, which not all grinders do.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Section 3 -->
+    <div class="guide-section" id="the-triangle">
+      <div class="section-number">03</div>
+      <h2>The espresso triangle: Dose, Yield & Time</h2>
+      <div class="prose">
+        <p>Every espresso shot is described by three numbers. Understanding these is the single biggest unlock for a beginner.</p>
+      </div>
+
+      <ul class="step-list">
+        <li>
+          <span class="step-num">D</span>
+          <div class="step-body">
+            <h4>Dose — how much coffee goes in</h4>
+            <p>Measured in grams. Most home setups use a double shot basket, which holds 16–18g of ground coffee. This is your starting point and rarely changes once set.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">Y</span>
+          <div class="step-body">
+            <h4>Yield — how much espresso comes out</h4>
+            <p>Also measured in grams (weigh the liquid, not the volume). A standard double shot targets a 1:2 ratio — 18g in, 36g out. A ristretto is closer to 1:1.5 (richer, more intense). A lungo is 1:3 or more (lighter, more bitter).</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">T</span>
+          <div class="step-body">
+            <h4>Time — how long the shot takes</h4>
+            <p>Start timing when the pump turns on. A well-dialed shot hits its yield in 25–35 seconds. Faster means under-extraction (sour, thin). Slower means over-extraction (bitter, harsh).</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="prose">
+        <p>These three variables interact. Adjusting one almost always means adjusting another. The main lever you pull is <strong>grind size</strong> — a finer grind slows the shot down, a coarser grind speeds it up.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Section 4 -->
+    <div class="guide-section" id="first-shot">
+      <div class="section-number">04</div>
+      <h2>Pulling your first shot, step by step</h2>
+      <div class="prose">
+        <p>Don't overthink it. Here's a simple process to follow your first time.</p>
+      </div>
+
+      <ul class="step-list">
+        <li>
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h4>Warm up your machine</h4>
+            <p>Most machines need 15–30 minutes to reach stable brewing temperature. Turn it on while you prep everything else. Run a blank shot (water only through the portafilter) to pre-heat the group head.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h4>Grind and dose</h4>
+            <p>Grind 18g of fresh beans into your portafilter basket. Use a scale — eyeballing it will frustrate you. Start your grinder at the manufacturer's recommended espresso setting and adjust from there.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h4>Distribute and tamp</h4>
+            <p>Lightly shake the portafilter to level the grounds, then use your finger or a distributor to even out any peaks. Tamp straight down with about 30 lbs of pressure — firm and level. A crooked tamp causes channeling (water finds a path of least resistance and under-extracts most of the puck).</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <h4>Lock in and brew</h4>
+            <p>Lock the portafilter into the group head and place your cup and scale underneath. Tare the scale, start the shot, and start your timer simultaneously. Watch the scale.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">05</span>
+          <div class="step-body">
+            <h4>Stop at your target yield</h4>
+            <p>Stop the shot when you hit your target weight — aim for 36g out (double your 18g dose). Note the time. If you hit 36g in 25–35 seconds, you're in the ballpark. If not, adjust your grind.</p>
+          </div>
+        </li>
+        <li>
+          <span class="step-num">06</span>
+          <div class="step-body">
+            <h4>Taste and adjust</h4>
+            <p>Drink it. Is it sour or thin? Grind finer (slows extraction). Is it bitter or harsh? Grind coarser (speeds extraction). Make one change at a time and pull another shot. This is "dialing in."</p>
+          </div>
+        </li>
+      </ul>
+
+      <div class="callout">
+        <div class="callout-label">First-shot expectation setting</div>
+        <p>Your first shot will probably not be great. That's completely normal. Expect to pull 3–5 shots before you start hitting a consistent, enjoyable result. Each one teaches you something. The coffee isn't wasted — it's tuition.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Section 5 -->
+    <div class="guide-section" id="troubleshooting">
+      <div class="section-number">05</div>
+      <h2>Troubleshooting common problems</h2>
+      <div class="prose">
+        <p>If your shots are consistently off, it's almost always one of these.</p>
+      </div>
+
+      <div class="troubleshoot">
+        <div class="ts-card">
+          <div class="ts-problem">Problem</div>
+          <h4>Shot runs too fast (&lt; 20 seconds)</h4>
+          <p>The espresso is gushing out pale and thin. The water is moving through too quickly and under-extracting. <strong>Fix:</strong> grind finer. If you're already at your grinder's finest setting, try adding 1–2g more coffee to your dose.</p>
+        </div>
+        <div class="ts-card">
+          <div class="ts-problem">Problem</div>
+          <h4>Shot runs too slow (&gt; 40 seconds)</h4>
+          <p>Dripping slowly, possibly dark and bitter. Over-extracted. <strong>Fix:</strong> grind coarser. Also check that you're not over-tamping or over-dosing.</p>
+        </div>
+        <div class="ts-card">
+          <div class="ts-problem">Problem</div>
+          <h4>Channeling — shot spurts unevenly</h4>
+          <p>Water finds a weak spot in the puck and blasts through one area while the rest extracts poorly. <strong>Fix:</strong> focus on distribution. Use a WDT tool (a needle stirrer) to break up clumps before tamping, and make sure your tamp is level.</p>
+        </div>
+        <div class="ts-card">
+          <div class="ts-problem">Problem</div>
+          <h4>No crema, or very thin crema</h4>
+          <p>Crema comes from CO₂ in freshly roasted coffee. No crema usually means stale beans. <strong>Fix:</strong> buy fresher coffee — roasted within the last 2–4 weeks. Check the roast date on the bag, not the best-by date.</p>
+        </div>
+        <div class="ts-card">
+          <div class="ts-problem">Problem</div>
+          <h4>Shot tastes sour</h4>
+          <p>Under-extracted. The bright, sharp acids dominate before the sweetness has a chance to come through. <strong>Fix:</strong> grind finer to slow the shot and increase extraction. Also check your water temperature — too cool causes sourness.</p>
+        </div>
+        <div class="ts-card">
+          <div class="ts-problem">Problem</div>
+          <h4>Shot tastes bitter or harsh</h4>
+          <p>Over-extracted. You've pulled too many compounds out of the coffee. <strong>Fix:</strong> grind coarser. You can also try reducing your dose slightly or shortening your yield.</p>
+        </div>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Section 6 -->
+    <div class="guide-section" id="coffee">
+      <div class="section-number">06</div>
+      <h2>Choosing your coffee</h2>
+      <div class="prose">
+        <p>Fresh beans are more important than expensive beans. A $15 bag roasted three weeks ago will outperform a $30 bag that's been sitting in a warehouse. Here's what to look for:</p>
+
+        <h3>Check the roast date</h3>
+        <p>Look for bags with a printed roast date, not just a "best by" date. You want beans roasted within the last 2–5 weeks. Too fresh (under a week) and the CO₂ hasn't off-gassed enough, causing inconsistent extraction. Too old (over 6 weeks) and the flavors have faded.</p>
+
+        <h3>Start with a medium roast</h3>
+        <p>Light roasts require more precision to extract well and taste flat if under-extracted. Very dark roasts can be forgiving, but they hide a lot of the coffee's character behind roast flavors. A medium or medium-dark roast gives you more room for error and a fuller flavor profile to taste and learn from.</p>
+
+        <h3>Buy whole beans</h3>
+        <p>Pre-ground coffee starts going stale within minutes of grinding. Whole beans stay fresh for weeks. If you invest in a grinder — which you should — always buy whole beans and grind immediately before brewing.</p>
+      </div>
+
+      <div class="callout">
+        <div class="callout-label">Where to buy</div>
+        <p>Local roasters are ideal — the beans are often roasted to order or within days. Online options like Trade, Onyx, or Counter Culture ship freshly roasted beans. Avoid big grocery-store brands unless you can find a roast date; most are months old before they hit the shelf.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <!-- Section 7 -->
+    <div class="guide-section" id="next-steps">
+      <div class="section-number">07</div>
+      <h2>What comes next</h2>
+      <div class="prose">
+        <p>Once you can pull a consistent, enjoyable double shot, the natural next steps are:</p>
+
+        <h3>Learn to steam milk</h3>
+        <p>If your machine has a steam wand, steamed milk opens up lattes, cappuccinos, flat whites, and more. It takes practice — expect a few weeks before your microfoam is silky rather than bubbly — but it's the same kind of satisfying progression as dialing in your espresso.</p>
+
+        <h3>Experiment with ratios</h3>
+        <p>Once you're comfortable with a 1:2 ratio, try a ristretto (1:1.5) for something more syrupy and intense, or a lungo (1:3) for something lighter. Different coffees also respond better to different ratios.</p>
+
+        <h3>Explore different origins</h3>
+        <p>Try a Yirgacheffe for floral, tea-like notes. Try a Colombian or Brazilian for chocolate and nuts. Try an Ethiopian natural process for fruit-forward complexity. Each coffee will require re-dialing your grind — that's normal and part of the fun.</p>
+      </div>
+    </div>
+
+    <!-- Bottom CTA -->
+    <div class="guide-cta">
+      <div>
+        <h3>Ready to pick your gear?</h3>
+        <p>See our tested recommendations for beginner machines and grinders at every budget.</p>
+      </div>
+      <div style="display:flex; gap:12px; flex-wrap:wrap;">
+        <a href="index.html#guides" class="btn btn-primary">Browse gear guides</a>
+        <a href="index.html#learn" class="btn btn-ghost">More how-tos</a>
+      </div>
+    </div>
+
+  </article>
+
+  <!-- Table of contents -->
+  <aside>
+    <nav class="toc">
+      <div class="toc-title">In this guide</div>
+      <ol>
+        <li><a href="#what-is-espresso">What is espresso?</a></li>
+        <li><a href="#equipment">Equipment you need</a></li>
+        <li><a href="#the-triangle">Dose, Yield &amp; Time</a></li>
+        <li><a href="#first-shot">Pulling your first shot</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#coffee">Choosing your coffee</a></li>
+        <li><a href="#next-steps">What comes next</a></li>
+      </ol>
+    </nav>
+  </aside>
+
+</div>
+
+<footer id="about">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="index.html" class="logo"><span class="mark"></span> Welcome to Espresso</a>
+        <p class="blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+        <a href="#">Affiliate Disclosure</a>
+        <a href="#">Privacy</a>
+      </div>
+    </div>
+    <p class="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves. Photos via Unsplash and Pexels, free for commercial use.</p>
+  </div>
+</footer>
+
+</body>
+</html>
