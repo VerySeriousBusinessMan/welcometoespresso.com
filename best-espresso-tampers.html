@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Espresso Tampers — Welcome to Espresso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#14100D; --bg-soft:#1E1813; --card:#221B15; --brass:#C79A5B; --brass-bright:#E3BC7E; --cream:#F2E9DC; --muted:#A89684; --line:#352B22; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Newsreader',serif; background:var(--bg); color:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 28px; }
+  img { display:block; max-width:100%; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(20,16,13,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .inner { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.6rem; letter-spacing:-0.01em; color:var(--cream); display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; transition:color .2s; }
+  .nav-links a:hover { color:var(--brass-bright); }
+  @media(max-width:720px){ .nav-links{ display:none; } }
+  .article-header { padding:72px 0 56px; border-bottom:1px solid var(--line); }
+  .back-link { font-family:'Bricolage Grotesque',sans-serif; font-size:0.82rem; color:var(--brass); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-bottom:32px; transition:color .2s; }
+  .back-link:hover { color:var(--brass-bright); }
+  .article-eyebrow { font-family:'Bricolage Grotesque',sans-serif; font-size:0.74rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass); margin-bottom:20px; }
+  .article-header h1 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(2.2rem,4.5vw,3.6rem); line-height:1.05; letter-spacing:-0.03em; color:var(--cream); margin-bottom:22px; max-width:22ch; }
+  .article-header h1 .accent { color:var(--brass); font-family:'Newsreader',serif; font-style:italic; font-weight:400; }
+  .article-meta { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); display:flex; gap:24px; flex-wrap:wrap; }
+  .article-body { padding:64px 0 96px; }
+  .prose { font-size:1.12rem; color:var(--cream); margin-bottom:32px; }
+  .prose p { margin-bottom:1.4em; }
+  .prose p:last-child { margin-bottom:0; }
+  .guide-section { margin-bottom:64px; }
+  .guide-section:last-child { margin-bottom:0; }
+  .section-number { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:12px; }
+  .guide-section h2 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(1.6rem,2.8vw,2.1rem); letter-spacing:-0.02em; color:var(--cream); margin-bottom:24px; line-height:1.1; }
+  .callout { background:var(--bg-soft); border:1px solid var(--line); border-left:3px solid var(--brass); border-radius:6px; padding:22px 26px; margin:32px 0; }
+  .callout-label { font-family:'Bricolage Grotesque',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass); margin-bottom:8px; }
+  .callout p { font-size:1rem; color:var(--muted); margin:0; }
+  .callout p+p { margin-top:0.8em; }
+  .divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+  .product-card { background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:28px; display:grid; grid-template-columns:1fr 2fr; }
+  @media(max-width:680px){ .product-card{ grid-template-columns:1fr; } }
+  .product-badge { background:var(--card); border-right:1px solid var(--line); overflow:hidden; }
+  @media(max-width:680px){ .product-badge{ border-right:none; border-bottom:1px solid var(--line); min-height:220px; } }
+  .product-badge a { display:block; height:100%; }
+  .product-img { width:100%; height:100%; object-fit:contain; display:block; background:var(--card); }
+  .product-body { padding:32px 36px; }
+  .product-body h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:6px; line-height:1.15; }
+  .product-body h3 a { color:var(--cream); text-decoration:none; transition:color .2s; }
+  .product-body h3 a:hover { color:var(--brass-bright); }
+  .product-price { font-family:'Bricolage Grotesque',sans-serif; font-size:0.88rem; color:var(--brass); margin-bottom:14px; }
+  .product-body p { font-size:1rem; color:var(--muted); line-height:1.6; margin-bottom:18px; }
+  .product-specs { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:22px; }
+  .spec { font-family:'Bricolage Grotesque',sans-serif; font-size:0.8rem; color:var(--muted); }
+  .spec strong { color:var(--cream); display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2px; }
+  .buy-btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.88rem; padding:12px 24px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; background:var(--brass); color:var(--bg); }
+  .buy-btn:hover { background:var(--brass-bright); transform:translateY(-2px); }
+  .compare-table { width:100%; border-collapse:collapse; margin:28px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:0.88rem; }
+  .compare-table th { text-align:left; font-size:0.7rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); padding:10px 16px; border-bottom:1px solid var(--line); }
+  .compare-table td { padding:13px 16px; border-bottom:1px solid var(--line); color:var(--cream); vertical-align:middle; line-height:1.4; }
+  .compare-table tr:last-child td { border-bottom:none; }
+  .compare-table td:first-child { font-weight:600; }
+  .compare-table td a { color:var(--brass); text-decoration:none; }
+  .compare-table td a:hover { color:var(--brass-bright); }
+  .badge-best { font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); background:var(--brass); border-radius:3px; padding:2px 7px; margin-left:8px; vertical-align:middle; }
+  .guide-cta { background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:40px 44px; margin-top:64px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; }
+  .guide-cta h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:8px; }
+  .guide-cta p { font-size:0.95rem; color:var(--muted); max-width:40ch; }
+  .btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.92rem; padding:15px 30px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; white-space:nowrap; }
+  .btn-primary { background:var(--brass); color:var(--bg); }
+  .btn-primary:hover { background:var(--brass-bright); transform:translateY(-2px); }
+  .btn-ghost { color:var(--cream); border:1px solid var(--line); }
+  .btn-ghost:hover { border-color:var(--brass); color:var(--brass-bright); }
+  footer { background:var(--bg-soft); border-top:1px solid var(--line); padding:56px 0 36px; }
+  footer .top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:28px; margin-bottom:36px; }
+  footer .blurb { color:var(--muted); max-width:34ch; font-size:1rem; }
+  .foot-links { display:flex; gap:30px; flex-wrap:wrap; font-family:'Bricolage Grotesque',sans-serif; }
+  .foot-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+  .foot-links a:hover { color:var(--brass-bright); }
+  .disclosure { font-family:'Bricolage Grotesque',sans-serif; font-size:0.78rem; color:var(--muted); opacity:0.7; border-top:1px solid var(--line); padding-top:24px; max-width:70ch; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap inner">
+    <a href="index.html" class="logo">Welcome to Espresso</a>
+    <ul class="nav-links">
+      <li><a href="index.html#start">Start Here</a></li>
+      <li><a href="index.html#guides">Buying Guides</a></li>
+      <li><a href="index.html#learn">Learn</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap article-header">
+  <a href="index.html" class="back-link">← Back to home</a>
+  <div class="article-eyebrow">Buying Guide · Accessories</div>
+  <h1>Best Espresso Tampers <span class="accent">for Beginners</span></h1>
+  <div class="article-meta">
+    <span>5 min read</span>
+    <span>Spring-loaded to manual — what actually matters</span>
+  </div>
+</header>
+
+<div class="wrap article-body">
+
+  <div class="prose">
+    <p>A tamper compresses your ground coffee into a puck before pulling a shot. Done right, it creates an even surface that water flows through evenly — and that consistency is what separates good espresso from channeled, sour, or bitter shots.</p>
+    <p>The good news: tamping technique matters more than the tamper itself, but a spring-loaded tamper removes the pressure variable entirely. Every pick on this list makes dialing in easier by keeping tamping consistent while you're still learning.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">Sizing note</div>
+    <p>Tamper size must match your portafilter basket. Most home machines use 51mm (De'Longhi), 54mm (Breville Bambino/Barista Express), or 58mm (commercial/prosumer). Normcore tampers come in multiple sizes — check your machine before ordering.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="guide-section" id="comparison">
+    <div class="section-number">At a glance</div>
+    <h2>Quick comparison</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>Tamper</th><th>Best for</th><th>Type</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.amazon.com/Normcore-58-5mm-Coffee-Tamper-Spring-loaded/dp/B09BTLP4P1?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Normcore V4</a> <span class="badge-best">Best Pick</span></td>
+          <td>Most beginners</td>
+          <td>Spring-loaded</td>
+          <td>~$39</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/58-5mm-Coffee-Distributor-Tamper-Adjustable/dp/B093FT2BFN?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Normcore 2-in-1</a></td>
+          <td>Distributor + tamper in one tool</td>
+          <td>Dual-head</td>
+          <td>~$55</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/Normcore-58-5mm-Palm-Tamper-Built/dp/B09QJVVQHP?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Normcore Palm Tamper</a></td>
+          <td>Ergonomic, saves counter space</td>
+          <td>Palm spring</td>
+          <td>~$35</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/Distributor-MATOW-Portafilter-Adjustable-Professional/dp/B082MKVYFV?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">MATOW Dual Head</a></td>
+          <td>Budget distributor + tamper combo</td>
+          <td>Dual-head</td>
+          <td>~$30</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <div class="guide-section" id="normcore-v4">
+    <div class="section-number">Our top pick</div>
+    <h2>Best overall: Normcore V4 Spring Tamper</h2>
+    <div class="product-card">
+      <div class="product-badge">
+        <a href="https://www.amazon.com/Normcore-58-5mm-Coffee-Tamper-Spring-loaded/dp/B09BTLP4P1?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/tamper-normcore.jpg" alt="Normcore V4 spring-loaded espresso tamper" class="product-img">
+        </a>
+      </div>
+      <div class="product-body">
+        <h3><a href="https://www.amazon.com/Normcore-58-5mm-Coffee-Tamper-Spring-loaded/dp/B09BTLP4P1?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Normcore V4 Spring-Loaded Tamper</a></h3>
+        <div class="product-price">~$39 on Amazon</div>
+        <p>The Normcore V4 is the tamper most home baristas end up recommending to each other, and for good reason. The built-in spring applies consistent pressure every time — you press down until the spring compresses and you feel the click, and the pressure is locked in at your chosen weight (15, 25, or 30 lbs, all included).</p>
+        <p>The self-leveling base rests on the portafilter basket rim and keeps the puck perfectly flat without any technique involved. It's the closest thing to removing the human variable from tamping, which is exactly what beginners need while learning to dial in grind size.</p>
+        <div class="product-specs">
+          <div class="spec"><strong>Type</strong>Spring-loaded</div>
+          <div class="spec"><strong>Sizes available</strong>53.3 / 58.5mm</div>
+          <div class="spec"><strong>Springs included</strong>15 / 25 / 30 lb</div>
+          <div class="spec"><strong>Base</strong>Flat stainless steel</div>
+        </div>
+        <a href="https://www.amazon.com/Normcore-58-5mm-Coffee-Tamper-Spring-loaded/dp/B09BTLP4P1?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="guide-section" id="normcore-2in1">
+    <div class="section-number">Best 2-in-1</div>
+    <h2>Best combo tool: Normcore Distributor + Tamper</h2>
+    <div class="product-card">
+      <div class="product-badge">
+        <a href="https://www.amazon.com/58-5mm-Coffee-Distributor-Tamper-Adjustable/dp/B093FT2BFN?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/tamper-normcore-2in1.jpg" alt="Normcore 2-in-1 coffee distributor and tamper" class="product-img">
+        </a>
+      </div>
+      <div class="product-body">
+        <h3><a href="https://www.amazon.com/58-5mm-Coffee-Distributor-Tamper-Adjustable/dp/B093FT2BFN?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Normcore 2-in-1 Distributor & Tamper</a></h3>
+        <div class="product-price">~$55 on Amazon</div>
+        <p>This combines a WDT-style distributor on one end and a spring-loaded tamper on the other — two steps in one tool. Flip it over to distribute grounds evenly across the basket, then flip again to tamp. It cuts down on tool clutter and speeds up the workflow once you're comfortable with the process.</p>
+        <p>If you're going to buy a distribution tool and a tamper anyway, the 2-in-1 costs less than both separately and takes up less drawer space. The only trade-off is that you can't upgrade each piece independently later.</p>
+        <div class="product-specs">
+          <div class="spec"><strong>Type</strong>Dual-head</div>
+          <div class="spec"><strong>Size</strong>58.5mm</div>
+          <div class="spec"><strong>Distributor</strong>Built-in spring</div>
+          <div class="spec"><strong>Tamper</strong>Spring-loaded</div>
+        </div>
+        <a href="https://www.amazon.com/58-5mm-Coffee-Distributor-Tamper-Adjustable/dp/B093FT2BFN?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="guide-section" id="normcore-palm">
+    <div class="section-number">Best ergonomic</div>
+    <h2>Best for small kitchens: Normcore Palm Tamper</h2>
+    <div class="product-card">
+      <div class="product-badge">
+        <a href="https://www.amazon.com/Normcore-58-5mm-Palm-Tamper-Built/dp/B09QJVVQHP?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/tamper-normcore-palm.jpg" alt="Normcore palm tamper" class="product-img">
+        </a>
+      </div>
+      <div class="product-body">
+        <h3><a href="https://www.amazon.com/Normcore-58-5mm-Palm-Tamper-Built/dp/B09QJVVQHP?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Normcore Palm Tamper</a></h3>
+        <div class="product-price">~$35 on Amazon</div>
+        <p>The palm tamper sits in the cup of your hand rather than being held like a traditional cylinder, which makes tamping more ergonomic and less awkward for beginners still learning the motion. It has a 30 lb built-in spring that provides consistent pressure without adjustment.</p>
+        <p>It's also the most compact of the three Normcore options, which matters if counter space is tight. The trade-off is that you can't swap springs to change pressure like on the V4.</p>
+        <div class="product-specs">
+          <div class="spec"><strong>Type</strong>Palm spring</div>
+          <div class="spec"><strong>Sizes available</strong>51 / 53.3 / 58.5mm</div>
+          <div class="spec"><strong>Spring</strong>Fixed 30 lb</div>
+          <div class="spec"><strong>Base</strong>Flat stainless steel</div>
+        </div>
+        <a href="https://www.amazon.com/Normcore-58-5mm-Palm-Tamper-Built/dp/B09QJVVQHP?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <div class="guide-section" id="matow">
+    <div class="section-number">Budget pick</div>
+    <h2>Best budget: MATOW 58mm Dual Head</h2>
+    <div class="product-card">
+      <div class="product-badge">
+        <a href="https://www.amazon.com/Distributor-MATOW-Portafilter-Adjustable-Professional/dp/B082MKVYFV?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/tamper-matow.jpg" alt="MATOW dual head coffee distributor and tamper" class="product-img">
+        </a>
+      </div>
+      <div class="product-body">
+        <h3><a href="https://www.amazon.com/Distributor-MATOW-Portafilter-Adjustable-Professional/dp/B082MKVYFV?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">MATOW 58mm Dual Head Distributor & Tamper</a></h3>
+        <div class="product-price">~$30 on Amazon</div>
+        <p>The MATOW is the budget-friendly way to get both a distributor and tamper in one tool. You spin the three-leaf clover side to distribute grounds, then flip and press with the flat tamper base. It lacks a spring, so pressure is manual — but at $30, it gets the job done while you decide if distribution tools are worth adding to your workflow.</p>
+        <p>The adjustable depth is useful if you switch between different basket depths. The diamond-grip handle gives a secure feel. Not the most refined tool, but an honest starting point.</p>
+        <div class="product-specs">
+          <div class="spec"><strong>Type</strong>Dual-head manual</div>
+          <div class="spec"><strong>Size</strong>58mm</div>
+          <div class="spec"><strong>Distributor</strong>3-leaf spin</div>
+          <div class="spec"><strong>Depth</strong>Adjustable</div>
+        </div>
+        <a href="https://www.amazon.com/Distributor-MATOW-Portafilter-Adjustable-Professional/dp/B082MKVYFV?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-cta">
+    <div>
+      <h3>Next: get your scale dialed in</h3>
+      <p>Consistent tamping is half the equation. Weighing your dose and yield takes the other half of the guesswork out of espresso.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="best-espresso-scales.html" class="btn btn-primary">Best scales →</a>
+      <a href="best-grinders.html" class="btn btn-ghost">Best grinders</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="index.html" class="logo">Welcome to Espresso</a>
+        <p class="blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#">About</a><a href="#">Contact</a><a href="#">Affiliate Disclosure</a><a href="#">Privacy</a>
+      </div>
+    </div>
+    <p class="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves.</p>
+  </div>
+</footer>
+</body>
+</html>
