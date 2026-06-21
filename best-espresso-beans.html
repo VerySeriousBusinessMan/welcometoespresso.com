@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Best Espresso Beans for Beginners — Welcome to Espresso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#14100D; --bg-soft:#1E1813; --card:#221B15; --brass:#C79A5B; --brass-bright:#E3BC7E; --cream:#F2E9DC; --muted:#A89684; --line:#352B22; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  body { font-family:'Newsreader',serif; background:var(--bg); color:var(--cream); line-height:1.7; -webkit-font-smoothing:antialiased; }
+  .wrap { max-width:1140px; margin:0 auto; padding:0 28px; }
+  img { display:block; max-width:100%; }
+  nav { position:sticky; top:0; z-index:50; background:rgba(20,16,13,0.85); backdrop-filter:blur(10px); border-bottom:1px solid var(--line); }
+  nav .inner { display:flex; align-items:center; justify-content:space-between; padding:18px 0; }
+  .logo { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.6rem; letter-spacing:-0.01em; color:var(--cream); display:flex; align-items:center; gap:10px; text-decoration:none; }
+  .nav-links { display:flex; gap:32px; list-style:none; font-family:'Bricolage Grotesque',sans-serif; }
+  .nav-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; transition:color .2s; }
+  .nav-links a:hover { color:var(--brass-bright); }
+  @media(max-width:720px){ .nav-links{ display:none; } }
+  .article-header { padding:72px 0 56px; border-bottom:1px solid var(--line); }
+  .back-link { font-family:'Bricolage Grotesque',sans-serif; font-size:0.82rem; color:var(--brass); text-decoration:none; display:inline-flex; align-items:center; gap:6px; margin-bottom:32px; transition:color .2s; }
+  .back-link:hover { color:var(--brass-bright); }
+  .article-eyebrow { font-family:'Bricolage Grotesque',sans-serif; font-size:0.74rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--brass); margin-bottom:20px; }
+  .article-header h1 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(2.2rem,4.5vw,3.6rem); line-height:1.05; letter-spacing:-0.03em; color:var(--cream); margin-bottom:22px; max-width:22ch; }
+  .article-header h1 .accent { color:var(--brass); font-family:'Newsreader',serif; font-style:italic; font-weight:400; }
+  .article-meta { font-family:'Bricolage Grotesque',sans-serif; font-size:0.84rem; color:var(--muted); display:flex; gap:24px; flex-wrap:wrap; }
+  .article-body { padding:64px 0 96px; }
+  .prose { font-size:1.12rem; color:var(--cream); margin-bottom:32px; }
+  .prose p { margin-bottom:1.4em; }
+  .prose p:last-child { margin-bottom:0; }
+  .prose strong { color:var(--cream); font-weight:600; font-family:'Bricolage Grotesque',sans-serif; }
+  .guide-section { margin-bottom:64px; }
+  .guide-section:last-child { margin-bottom:0; }
+  .section-number { font-family:'Bricolage Grotesque',sans-serif; font-size:0.72rem; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--brass); margin-bottom:12px; }
+  .guide-section h2 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:clamp(1.6rem,2.8vw,2.1rem); letter-spacing:-0.02em; color:var(--cream); margin-bottom:24px; line-height:1.1; }
+  .callout { background:var(--bg-soft); border:1px solid var(--line); border-left:3px solid var(--brass); border-radius:6px; padding:22px 26px; margin:32px 0; }
+  .callout-label { font-family:'Bricolage Grotesque',sans-serif; font-size:0.7rem; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--brass); margin-bottom:8px; }
+  .callout p { font-size:1rem; color:var(--muted); margin:0; }
+  .callout p+p { margin-top:0.8em; }
+  .divider { border:none; border-top:1px solid var(--line); margin:48px 0; }
+
+  /* Bean cards */
+  .bean-card { background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; overflow:hidden; margin-bottom:28px; display:grid; grid-template-columns:1fr 2fr; }
+  @media(max-width:680px){ .bean-card{ grid-template-columns:1fr; } }
+  .bean-badge { background:var(--card); border-right:1px solid var(--line); overflow:hidden; }
+  @media(max-width:680px){ .bean-badge{ border-right:none; border-bottom:1px solid var(--line); min-height:220px; } }
+  .bean-badge a { display:block; height:100%; }
+  .bean-product-img { width:100%; height:100%; object-fit:cover; display:block; }
+  .bean-body { padding:32px 36px; }
+  .bean-body h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:6px; line-height:1.15; }
+  .bean-body h3 a { color:var(--cream); text-decoration:none; transition:color .2s; }
+  .bean-body h3 a:hover { color:var(--brass-bright); }
+  .bean-price { font-family:'Bricolage Grotesque',sans-serif; font-size:0.88rem; color:var(--brass); margin-bottom:14px; }
+  .bean-body p { font-size:1rem; color:var(--muted); line-height:1.6; margin-bottom:18px; }
+  .bean-specs { display:flex; gap:24px; flex-wrap:wrap; margin-bottom:22px; }
+  .spec { font-family:'Bricolage Grotesque',sans-serif; font-size:0.8rem; color:var(--muted); }
+  .spec strong { color:var(--cream); display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:2px; }
+  .buy-btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.88rem; padding:12px 24px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; background:var(--brass); color:var(--bg); }
+  .buy-btn:hover { background:var(--brass-bright); transform:translateY(-2px); }
+
+  /* Comparison table */
+  .compare-table { width:100%; border-collapse:collapse; margin:28px 0; font-family:'Bricolage Grotesque',sans-serif; font-size:0.88rem; }
+  .compare-table th { text-align:left; font-size:0.7rem; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--muted); padding:10px 16px; border-bottom:1px solid var(--line); }
+  .compare-table td { padding:13px 16px; border-bottom:1px solid var(--line); color:var(--cream); vertical-align:middle; line-height:1.4; }
+  .compare-table tr:last-child td { border-bottom:none; }
+  .compare-table td:first-child { font-weight:600; }
+  .compare-table td a { color:var(--brass); text-decoration:none; }
+  .compare-table td a:hover { color:var(--brass-bright); }
+  .badge-best { font-size:0.68rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; color:var(--bg); background:var(--brass); border-radius:3px; padding:2px 7px; margin-left:8px; vertical-align:middle; }
+
+  .guide-cta { background:var(--bg-soft); border:1px solid var(--line); border-radius:10px; padding:40px 44px; margin-top:64px; display:flex; align-items:center; justify-content:space-between; gap:28px; flex-wrap:wrap; }
+  .guide-cta h3 { font-family:'Bricolage Grotesque',sans-serif; font-weight:800; font-size:1.4rem; letter-spacing:-0.02em; color:var(--cream); margin-bottom:8px; }
+  .guide-cta p { font-size:0.95rem; color:var(--muted); max-width:40ch; }
+  .btn { font-family:'Bricolage Grotesque',sans-serif; font-weight:600; font-size:0.92rem; padding:15px 30px; border-radius:4px; text-decoration:none; transition:all .2s; display:inline-block; white-space:nowrap; }
+  .btn-primary { background:var(--brass); color:var(--bg); }
+  .btn-primary:hover { background:var(--brass-bright); transform:translateY(-2px); }
+  .btn-ghost { color:var(--cream); border:1px solid var(--line); }
+  .btn-ghost:hover { border-color:var(--brass); color:var(--brass-bright); }
+  footer { background:var(--bg-soft); border-top:1px solid var(--line); padding:56px 0 36px; }
+  footer .top { display:flex; justify-content:space-between; flex-wrap:wrap; gap:28px; margin-bottom:36px; }
+  footer .blurb { color:var(--muted); max-width:34ch; font-size:1rem; }
+  .foot-links { display:flex; gap:30px; flex-wrap:wrap; font-family:'Bricolage Grotesque',sans-serif; }
+  .foot-links a { color:var(--muted); text-decoration:none; font-size:0.9rem; }
+  .foot-links a:hover { color:var(--brass-bright); }
+  .disclosure { font-family:'Bricolage Grotesque',sans-serif; font-size:0.78rem; color:var(--muted); opacity:0.7; border-top:1px solid var(--line); padding-top:24px; max-width:70ch; }
+</style>
+</head>
+<body>
+<nav>
+  <div class="wrap inner">
+    <a href="index.html" class="logo">Welcome to Espresso</a>
+    <ul class="nav-links">
+      <li><a href="index.html#start">Start Here</a></li>
+      <li><a href="index.html#guides">Buying Guides</a></li>
+      <li><a href="index.html#learn">Learn</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap article-header">
+  <a href="index.html" class="back-link">← Back to home</a>
+  <div class="article-eyebrow">Buying Guide · Beans</div>
+  <h1>Best Espresso Beans <span class="accent">for Beginners</span></h1>
+  <div class="article-meta">
+    <span>6 min read</span>
+    <span>Fresh-roasted picks at every budget</span>
+  </div>
+</header>
+
+<div class="wrap article-body">
+
+  <div class="prose">
+    <p>Bean choice makes a bigger difference than most beginners expect. Espresso concentrates everything — good beans taste incredible, bad beans taste worse than they would in any other brew method. The good news: you don't need to spend a lot to get excellent results.</p>
+    <p>All four picks below are available on Amazon with reasonable shipping, roast reasonably fresh, and work well across a range of espresso machines.</p>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">What roast works best?</div>
+    <p>Medium to medium-dark roasts are the most forgiving for beginners. They extract consistently and are easier to dial in than very light or very dark roasts. All four picks below fall in this range. Once you're comfortable with your setup, lighter roasts open up a whole new flavor range — but start here.</p>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Quick comparison -->
+  <div class="guide-section" id="comparison">
+    <div class="section-number">At a glance</div>
+    <h2>Quick comparison</h2>
+    <table class="compare-table">
+      <thead>
+        <tr><th>Bean</th><th>Roast</th><th>Best for</th><th>Price</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="https://www.amazon.com/Lavazza-Coffee-Medium-Espresso-2-2-Pound/dp/B000SDKDM4?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Lavazza Super Crema</a> <span class="badge-best">Best Pick</span></td>
+          <td>Medium</td>
+          <td>Most beginners</td>
+          <td>~$17 / 2.2 lb</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/illy-Whole-Bean-Coffee-Preservatives/dp/B07HRVYPJ7?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">illy Classico</a></td>
+          <td>Medium</td>
+          <td>Classic Italian flavor</td>
+          <td>~$13 / 8.8 oz</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/Stumptown-Bender-Coffee-Flavor-Chocolate/dp/B088L4T4KQ?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Stumptown Hair Bender</a></td>
+          <td>Medium</td>
+          <td>Specialty exploration</td>
+          <td>~$55 / 5 lb</td>
+        </tr>
+        <tr>
+          <td><a href="https://www.amazon.com/Peets-Coffee-Espresso-Forte-Roast/dp/B085HCY7XH?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Peet's Espresso Forte</a></td>
+          <td>Dark</td>
+          <td>Bold, traditional shots</td>
+          <td>~$28 / 32 oz</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Bean 1 -->
+  <div class="guide-section" id="lavazza">
+    <div class="section-number">Our top pick</div>
+    <h2>Best overall: Lavazza Super Crema</h2>
+    <div class="bean-card">
+      <div class="bean-badge">
+        <a href="https://www.amazon.com/Lavazza-Coffee-Medium-Espresso-2-2-Pound/dp/B000SDKDM4?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/beans-lavazza.jpg" alt="Lavazza Super Crema espresso beans" class="bean-product-img">
+        </a>
+      </div>
+      <div class="bean-body">
+        <h3><a href="https://www.amazon.com/Lavazza-Coffee-Medium-Espresso-2-2-Pound/dp/B000SDKDM4?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Lavazza Super Crema</a></h3>
+        <div class="bean-price">~$17 / 2.2 lb on Amazon</div>
+        <p>The most beginner-friendly espresso bean you can buy. Lavazza Super Crema is an Arabica-Robusta blend designed specifically for espresso — it extracts consistently, produces a rich, lasting crema, and tastes excellent in milk drinks as well as straight shots.</p>
+        <p>The Italian heritage comes through in the smooth, balanced profile: notes of honey, almonds, and a gentle spice finish. It's forgiving of minor extraction mistakes, which makes it ideal when you're still dialing things in.</p>
+        <div class="bean-specs">
+          <div class="spec"><strong>Roast</strong>Medium</div>
+          <div class="spec"><strong>Blend</strong>Arabica / Robusta</div>
+          <div class="spec"><strong>Origin</strong>Brazil, Colombia</div>
+          <div class="spec"><strong>Bag size</strong>2.2 lb</div>
+        </div>
+        <a href="https://www.amazon.com/Lavazza-Coffee-Medium-Espresso-2-2-Pound/dp/B000SDKDM4?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Bean 2 -->
+  <div class="guide-section" id="illy">
+    <div class="section-number">Premium pick</div>
+    <h2>Best Italian: illy Classico</h2>
+    <div class="bean-card">
+      <div class="bean-badge">
+        <a href="https://www.amazon.com/illy-Whole-Bean-Coffee-Preservatives/dp/B07HRVYPJ7?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/beans-illy.jpg" alt="illy Classico whole bean coffee" class="bean-product-img">
+        </a>
+      </div>
+      <div class="bean-body">
+        <h3><a href="https://www.amazon.com/illy-Whole-Bean-Coffee-Preservatives/dp/B07HRVYPJ7?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">illy Classico Whole Bean</a></h3>
+        <div class="bean-price">~$13 / 8.8 oz can on Amazon</div>
+        <p>illy has been perfecting the same nine-bean, 100% Arabica blend since 1933. The Classico medium roast is the benchmark for Italian espresso: smooth, balanced, and remarkably consistent across seasons. It's what you'd drink standing at a bar in Rome.</p>
+        <p>The pressure-sealed metal cans lock in freshness far longer than valve bags, making illy a reliable choice even if you go through coffee slowly. Notes of caramel, orange blossom, and jasmine make it complex without being challenging.</p>
+        <div class="bean-specs">
+          <div class="spec"><strong>Roast</strong>Medium</div>
+          <div class="spec"><strong>Blend</strong>100% Arabica</div>
+          <div class="spec"><strong>Origin</strong>9 countries</div>
+          <div class="spec"><strong>Bag size</strong>8.8 oz</div>
+        </div>
+        <a href="https://www.amazon.com/illy-Whole-Bean-Coffee-Preservatives/dp/B07HRVYPJ7?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Bean 3 -->
+  <div class="guide-section" id="stumptown">
+    <div class="section-number">Specialty pick</div>
+    <h2>Best specialty: Stumptown Hair Bender</h2>
+    <div class="bean-card">
+      <div class="bean-badge">
+        <a href="https://www.amazon.com/Stumptown-Bender-Coffee-Flavor-Chocolate/dp/B088L4T4KQ?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/beans-stumptown.jpg" alt="Stumptown Hair Bender coffee beans" class="bean-product-img">
+        </a>
+      </div>
+      <div class="bean-body">
+        <h3><a href="https://www.amazon.com/Stumptown-Bender-Coffee-Flavor-Chocolate/dp/B088L4T4KQ?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Stumptown Hair Bender</a></h3>
+        <div class="bean-price">~$55 / 5 lb on Amazon</div>
+        <p>Stumptown's flagship blend draws on coffees from Latin America, Africa, and Indonesia to create something genuinely complex. Hair Bender is what specialty coffee shops use when they want to make an impression — citrus brightness, dark chocolate depth, and a lingering sweetness that sets it apart from any commodity espresso blend.</p>
+        <p>The 5 lb bag is exceptional value per pound and a smart choice if you pull multiple shots a day. This is the coffee to graduate to once you've dialed in your technique on something more forgiving.</p>
+        <div class="bean-specs">
+          <div class="spec"><strong>Roast</strong>Medium</div>
+          <div class="spec"><strong>Blend</strong>100% Arabica</div>
+          <div class="spec"><strong>Origin</strong>Latin America, Africa, Indonesia</div>
+          <div class="spec"><strong>Bag size</strong>5 lb</div>
+        </div>
+        <a href="https://www.amazon.com/Stumptown-Bender-Coffee-Flavor-Chocolate/dp/B088L4T4KQ?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- Bean 4 -->
+  <div class="guide-section" id="peets">
+    <div class="section-number">Dark roast pick</div>
+    <h2>Best dark roast: Peet's Espresso Forte</h2>
+    <div class="bean-card">
+      <div class="bean-badge">
+        <a href="https://www.amazon.com/Peets-Coffee-Espresso-Forte-Roast/dp/B085HCY7XH?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">
+          <img src="images/beans-peets.jpg" alt="Peet's Espresso Forte dark roast beans" class="bean-product-img">
+        </a>
+      </div>
+      <div class="bean-body">
+        <h3><a href="https://www.amazon.com/Peets-Coffee-Espresso-Forte-Roast/dp/B085HCY7XH?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener">Peet's Espresso Forte</a></h3>
+        <div class="bean-price">~$28 / 32 oz on Amazon</div>
+        <p>Peet's created Espresso Forte as their dedicated espresso blend — bold, rich, and deeply traditional. Dark-roasted 100% Arabica with a stout body, effusive aroma, and luscious crema. If your ideal espresso is strong and bittersweet, this is it.</p>
+        <p>Dark roasts extract more easily and are very forgiving, making Espresso Forte a good fallback if you're struggling to dial in lighter beans. The 32 oz bag offers excellent value for daily espresso drinkers. A classic choice that's earned its reputation over decades.</p>
+        <div class="bean-specs">
+          <div class="spec"><strong>Roast</strong>Dark</div>
+          <div class="spec"><strong>Blend</strong>100% Arabica</div>
+          <div class="spec"><strong>Origin</strong>Multi-origin</div>
+          <div class="spec"><strong>Bag size</strong>32 oz</div>
+        </div>
+        <a href="https://www.amazon.com/Peets-Coffee-Espresso-Forte-Roast/dp/B085HCY7XH?tag=welcometoespr-20&linkCode=ll1" target="_blank" rel="noopener" class="buy-btn">View on Amazon →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="guide-cta">
+    <div>
+      <h3>Ready to brew?</h3>
+      <p>Once you've got your beans sorted, make sure your grinder is up to the task — it matters more than most beginners realize.</p>
+    </div>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;">
+      <a href="best-grinders.html" class="btn btn-primary">Best grinders →</a>
+      <a href="beginners-guide.html" class="btn btn-ghost">Beginner's guide</a>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="index.html" class="logo">Welcome to Espresso</a>
+        <p class="blurb">Helping beginners build a home espresso setup they'll actually love — one honest guide at a time.</p>
+      </div>
+      <div class="foot-links">
+        <a href="#">About</a><a href="#">Contact</a><a href="#">Affiliate Disclosure</a><a href="#">Privacy</a>
+      </div>
+    </div>
+    <p class="disclosure">Affiliate disclosure: Welcome to Espresso is reader-supported. When you buy through links on our site, we may earn an affiliate commission at no extra cost to you. We only recommend gear we'd use ourselves.</p>
+  </div>
+</footer>
+</body>
+</html>
